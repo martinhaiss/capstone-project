@@ -1,7 +1,5 @@
 import React from "react";
 import Card from "./Card";
-// import map from "./img/map-placeholder.png";
-// import running from "./img/running.png";
 
 export default {
   title: "Component/Card",
@@ -12,7 +10,7 @@ const Template = (args) => <Card {...args} />;
 
 export const Activity = Template.bind({});
 Activity.args = {
-  //  sport: running,
+  sport: "./img/running.png",
   name: "Schnelle Abendrunde Richtung Jenischpark",
   route: "./img/map-placeholder.png",
   date: "05.11.2021",

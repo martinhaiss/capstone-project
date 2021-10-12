@@ -1,5 +1,4 @@
 import CardList from "./CardList";
-// import map from "./img/map-placeholder.png";
 
 export default {
   title: "Component/CardList",
