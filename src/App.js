@@ -10,8 +10,7 @@ function App() {
 }
 
 const AppLayout = styled.div`
-  max-width: 450px;
-  margin: auto;
+  max-width: 600px;
   height: 98vh;
 `;
 

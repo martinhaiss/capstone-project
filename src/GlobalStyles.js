@@ -1,12 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    background: whitesmoke;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
-  }
+ * {
+box-sizing: border-box;
+font-family: Open-Sans, Helvetica, Sans-Serif;
+background: whitesmoke;
+}
 `;
 
 export default GlobalStyles;

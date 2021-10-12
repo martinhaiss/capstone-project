@@ -12,11 +12,12 @@ function ActivityCard({ sport, name, route, date, time, distance, duration }) {
       <DateTime>
         <p>Date: {date}</p>
         <VerticalLine />
-        <p>Time: {time}</p>
+        <p>Start: {time}</p>
       </DateTime>
       <HorizontalLine />
       <DistanceDuration>
         <p>Distance: {distance}</p>
+
         <VerticalLine />
         <p>Duration: {duration}</p>
       </DistanceDuration>
@@ -30,8 +31,6 @@ const Wrapper = styled.div`
   padding: 15px;
   border-radius: 13px;
   box-shadow: 0px 0px 20px #dedede;
-  display: flex;
-  flex-direction: column;
 `;
 
 const Icon = styled.img`
@@ -42,7 +41,6 @@ const Icon = styled.img`
 
 const CardTitle = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
 `;
 
@@ -52,11 +50,8 @@ const Spacer = styled.div`
 
 const MapImg = styled.img`
   display: flex;
-  max-width: 400px;
+  width: 100%;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 `;
 
 const DateTime = styled.div`

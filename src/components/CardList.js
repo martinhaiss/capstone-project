@@ -1,10 +1,9 @@
-import styled from "styled-components/macro";
 import ActivityCard from "./Card";
 import activityData from "../data.json";
 
 function CardList() {
   return (
-    <Wrapper role="main">
+    <main>
       {activityData.map((activity) => (
         <ActivityCard
           sport={activity.sport}
@@ -17,10 +16,8 @@ function CardList() {
           key={activity.id}
         />
       ))}
-    </Wrapper>
+    </main>
   );
 }
-
-const Wrapper = styled.div``;
 
 export default CardList;

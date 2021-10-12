@@ -14,7 +14,7 @@ describe("Card", () => {
     const name = screen.getByText("Zum Deich den Schafen gute Nacht sagen");
     expect(name).toBeInTheDocument();
 
-    const mapimg = screen.getByAltText("img of map with route");
-    expect(mapimg).toBeInTheDocument();
+    const img = screen.getByAltText("img of map with route");
+    expect(img).toBeInTheDocument();
   });
 });
