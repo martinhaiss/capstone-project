@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import ActivityCard from "./Card";
 import activityData from "../data.json";
 
-function CardList({}) {
+function CardList() {
   return (
     <Wrapper role="main">
       {activityData.map((activity) => (
@@ -14,7 +14,7 @@ function CardList({}) {
           time={activity.time}
           distance={activity.distance}
           duration={activity.duration}
-          key={activity.name}
+          key={activity.id}
         />
       ))}
     </Wrapper>
