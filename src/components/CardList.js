@@ -4,7 +4,7 @@ import activityData from "./data.json";
 
 function CardList({}) {
   return (
-    <div>
+    <div role="main">
       {activityData.map((activity) => (
         <ActivityCard
           sport={activity.sport}
