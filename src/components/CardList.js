@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
 import ActivityCard from "./Card";
 import activityData from "./data.json";
+import styled from "styled-components";
 
 function CardList({}) {
   return (
-    <div role="main">
+    <Wrapper role="main">
       {activityData.map((activity) => (
         <ActivityCard
           sport={activity.sport}
@@ -17,8 +17,10 @@ function CardList({}) {
           key={activity.name}
         />
       ))}
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``;
 
 export default CardList;

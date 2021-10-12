@@ -1,33 +1,25 @@
-import styled, { css } from "styled-components";
-import runningIcon from "./img/running.png";
-import cyclingIcon from "./img/cycling.png";
-
-const Sport = ({ sport }) => (
-  <img src={"Running" ? runningIcon : cyclingIcon} />
-);
+import styled from "styled-components";
 
 function ActivityCard({ sport, name, route, date, time, distance, duration }) {
   return (
     <Wrapper>
-      <StyledCardTitle>
+      <CardTitle>
         <Icon src={sport} />
         <Spacer />
         <p>{name}</p>
-      </StyledCardTitle>
-
-      <Img src={route} />
-
-      <StyledDateTime>
+      </CardTitle>
+      <MapImg src={route} alt="img of map with route" />
+      <DateTime>
         <p>Date: {date}</p>
         <VerticalLine />
         <p>Time: {time}</p>
-      </StyledDateTime>
+      </DateTime>
       <HorizontalLine />
-      <StyledDistanceDuration>
+      <DistanceDuration>
         <p>Distance: {distance}</p>
         <VerticalLine />
         <p>Duration: {duration}</p>
-      </StyledDistanceDuration>
+      </DistanceDuration>
     </Wrapper>
   );
 }
@@ -48,7 +40,7 @@ const Icon = styled.img`
   margin-top: 14px;
 `;
 
-const StyledCardTitle = styled.div`
+const CardTitle = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -58,28 +50,26 @@ const Spacer = styled.div`
   width: 10px;
 `;
 
-const Img = styled.img`
-  diplay: flex;
-  width: 400px;
+const MapImg = styled.img`
+  display: flex;
+  max-width: 400px;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 `;
 
-const StyledDateTime = styled.div`
+const DateTime = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 `;
 
 const HorizontalLine = styled.hr`
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 90%;
 `;
 
-const StyledDistanceDuration = styled.div`
+const DistanceDuration = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -89,7 +79,7 @@ const VerticalLine = styled.div`
   border-left: thin solid #000000;
   margin-top: 10px;
   margin-left: 20px;
-  margin-right:20px
+  margin-right: 20px;
   margin-top: 10px;
 `;
 

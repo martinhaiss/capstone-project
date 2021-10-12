@@ -45,7 +45,7 @@ describe("CardList", () => {
   it("renders CardList element", () => {
     render(<CardList activityDatata={mockData} />);
 
-    const list = screen.getByRole("main");
-    expect(list).toBeInTheDocument();
+    const activities = screen.getByRole("main");
+    expect(activities).toBeInTheDocument();
   });
 });
