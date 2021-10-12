@@ -1,6 +1,6 @@
+import styled from "styled-components/macro";
 import ActivityCard from "./Card";
-import activityData from "./data.json";
-import styled from "styled-components";
+import activityData from "../data.json";
 
 function CardList({}) {
   return (

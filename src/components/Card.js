@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 function ActivityCard({ sport, name, route, date, time, distance, duration }) {
   return (

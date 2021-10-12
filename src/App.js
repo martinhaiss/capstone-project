@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import CardList from "./components/CardList";
 
 function App() {
