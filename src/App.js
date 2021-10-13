@@ -1,12 +1,17 @@
-import GlobalStyle from "./components/GlobalStyle";
+import styled from "styled-components/macro";
+import CardList from "./components/CardList";
 
 function App() {
   return (
-    <div className="App">
-      <GlobalStyle />
-      <p>Edit capstone-project and save to reload.</p>
-    </div>
+    <AppLayout>
+      <CardList />
+    </AppLayout>
   );
 }
+
+const AppLayout = styled.div`
+  max-width: 600px;
+  height: 98vh;
+`;
 
 export default App;
