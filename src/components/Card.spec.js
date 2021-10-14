@@ -19,9 +19,9 @@ describe("Card", () => {
   });
 });
 
-it("renders one buttons", () => {
+it("renders one button", () => {
   render(<Card />);
 
-  const Buttons = screen.getAllByRole("button");
-  expect(Buttons).toHaveLength(1);
+  const Button = screen.getAllByRole("button");
+  expect(Button).toHaveLength(1);
 });

@@ -17,15 +17,15 @@ function ActivityCard({
   const [showDetails, setshowDetails] = useState(false);
 
   const handleDetailsButtonClick = () => {
-    setshowDetails(showDetails ? false : true);
+    setshowDetails(!showDetails);
   };
 
   return (
     <Wrapper>
-      <Heading>
+      <Header>
         <Icon src={sport} />
-        <Title>{name}</Title>
-      </Heading>
+        <Name>{name}</Name>
+      </Header>
       <MapImg src={route} alt="img of map with route" />
       <DateTime>
         <Date>Date: {date}</Date>
@@ -42,14 +42,14 @@ function ActivityCard({
 
       {showDetails ? (
         <div>
-          <Adress>
+          <Address>
             <Meet>Meeting Point</Meet>
             <Street>{street}</Street>
             <City>
               {postalcode} {city}
             </City>
             <Info>{info}</Info>
-          </Adress>
+          </Address>
         </div>
       ) : null}
       <ShowAndJoin>
@@ -71,7 +71,7 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Heading = styled.div`
+const Header = styled.header`
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-columns: 0.2fr 1.4fr 1.4fr;
@@ -84,7 +84,7 @@ const Icon = styled.img`
   grid-column: 1 / 2;
 `;
 
-const Title = styled.p`
+const Name = styled.p`
   grid-column: 2 / 4;
 `;
 
@@ -122,7 +122,7 @@ const Duration = styled.p`
   grid-column: 5 / 7;
 `;
 
-const Adress = styled.div`
+const Address = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 0.1fr 1fr 1fr 0.5fr;
   grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr;

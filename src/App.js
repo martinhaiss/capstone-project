@@ -12,12 +12,8 @@ function App() {
 const AppLayout = styled.div`
   max-width: 600px;
   height: 98vh;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: 0.125fr 1fr 0.075fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 5px;
+  gap: 5px 0;
 `;
 
 export default App;
