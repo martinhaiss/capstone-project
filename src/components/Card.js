@@ -1,26 +1,62 @@
 import styled from "styled-components/macro";
+import { useState } from "react";
 
-function ActivityCard({ sport, name, route, date, time, distance, duration }) {
+function ActivityCard({
+  sport,
+  name,
+  route,
+  date,
+  time,
+  distance,
+  duration,
+  postalcode,
+  city,
+  street,
+  info,
+}) {
+  const [showDetails, setshowDetails] = useState(false);
+
+  const handleDetailsButtonClick = () => {
+    setshowDetails(showDetails ? false : true);
+  };
+
   return (
     <Wrapper>
-      <CardTitle>
+      <Heading>
         <Icon src={sport} />
-        <Spacer />
-        <p>{name}</p>
-      </CardTitle>
+        <Title>{name}</Title>
+      </Heading>
       <MapImg src={route} alt="img of map with route" />
       <DateTime>
-        <p>Date: {date}</p>
+        <Date>Date: {date}</Date>
         <VerticalLine />
-        <p>Start: {time}</p>
+        <Time>Start: {time}</Time>
       </DateTime>
       <HorizontalLine />
       <DistanceDuration>
-        <p>Distance: {distance}</p>
-
+        <Distance>Distance: {distance}</Distance>
         <VerticalLine />
-        <p>Duration: {duration}</p>
+        <Duration>Duration: {duration}</Duration>
       </DistanceDuration>
+      <HorizontalLine />
+
+      {showDetails ? (
+        <div>
+          <Adress>
+            <Meet>Meeting Point</Meet>
+            <Street>{street}</Street>
+            <City>
+              {postalcode} {city}
+            </City>
+            <Info>{info}</Info>
+          </Adress>
+        </div>
+      ) : null}
+      <ShowAndJoin>
+        <ButtonMore onClick={handleDetailsButtonClick}>
+          {showDetails ? "less" : "more"}
+        </ButtonMore>
+      </ShowAndJoin>
     </Wrapper>
   );
 }
@@ -31,51 +67,114 @@ const Wrapper = styled.div`
   padding: 15px;
   border-radius: 13px;
   box-shadow: 0px 0px 20px #dedede;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Heading = styled.div`
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 0.2fr 1.4fr 1.4fr;
 `;
 
 const Icon = styled.img`
   height: 18px;
   width: auto;
   margin-top: 14px;
+  grid-column: 1 / 2;
 `;
 
-const CardTitle = styled.div`
-  display: flex;
-  justify-content: flex-start;
-`;
-
-const Spacer = styled.div`
-  width: 10px;
+const Title = styled.p`
+  grid-column: 2 / 4;
 `;
 
 const MapImg = styled.img`
-  display: flex;
+  border-radius: 2%;
   width: 100%;
   height: auto;
 `;
 
 const DateTime = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr 1fr 1fr 0.5fr;
+`;
+
+const Date = styled.p`
+  grid-column: 2 / 4;
+`;
+
+const Time = styled.p`
+  grid-column: 5 / 7;
+`;
+
+const DistanceDuration = styled.div`
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr 1fr 1fr 0.5fr;
+`;
+
+const Distance = styled.p`
+  grid-column: 2 / 4;
+`;
+
+const Duration = styled.p`
+  grid-column: 5 / 7;
+`;
+
+const Adress = styled.div`
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr;
+`;
+
+const Meet = styled.h3`
+  font-size: medium;
+  grid-column: 2 / 7;
+  grid-row: 1 / 2;
+`;
+
+const Street = styled.p`
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+`;
+
+const City = styled.p`
+  grid-column: 5 / 7;
+  grid-row: 2 / 3;
+`;
+
+const Info = styled.p`
+  grid-column: 2 / 7;
+  grid-row: 3 / 5;
 `;
 
 const HorizontalLine = styled.hr`
   width: 90%;
 `;
 
-const DistanceDuration = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-`;
-
 const VerticalLine = styled.div`
   border-left: thin solid #000000;
   margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 10px;
+`;
+
+const ShowAndJoin = styled.div`
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+`;
+
+const ButtonMore = styled.button`
+  grid-column: 3 / 5;
+  background-color: #b4e9f5;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px 10px 10px 10px;
 `;
 
 export default ActivityCard;
