@@ -13,6 +13,10 @@ function CardList() {
           time={activity.time}
           distance={activity.distance}
           duration={activity.duration}
+          postalcode={activity.postalcode}
+          city={activity.city}
+          street={activity.street}
+          info={activity.info}
           key={activity.id}
         />
       ))}
