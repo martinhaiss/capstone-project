@@ -18,3 +18,10 @@ describe("Card", () => {
     expect(img).toBeInTheDocument();
   });
 });
+
+it("renders one buttons", () => {
+  render(<Card />);
+
+  const Buttons = screen.getAllByRole("button");
+  expect(Buttons).toHaveLength(1);
+});
