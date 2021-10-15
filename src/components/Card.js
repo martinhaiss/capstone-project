@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import { useState } from "react";
+import JoinButton from "./JoinButton";
 
 function ActivityCard({
   sport,
@@ -15,7 +16,10 @@ function ActivityCard({
   info,
 }) {
   const [showDetails, setshowDetails] = useState(false);
-
+  const [isJoined, setIsJoined] = useState(false);
+  const toggleJoin = () => {
+    setIsJoined(!isJoined);
+  };
   const handleDetailsButtonClick = () => {
     setshowDetails(!showDetails);
   };
@@ -29,34 +33,35 @@ function ActivityCard({
       <MapImg src={route} alt="img of map with route" />
       <DateTime>
         <Date>Date: {date}</Date>
-        <VerticalLine />
+
         <Time>Start: {time}</Time>
       </DateTime>
       <HorizontalLine />
       <DistanceDuration>
         <Distance>Distance: {distance}</Distance>
-        <VerticalLine />
+
         <Duration>Duration: {duration}</Duration>
       </DistanceDuration>
       <HorizontalLine />
 
       {showDetails ? (
         <div>
-          <Address>
+          <Details>
             <Meet>Meeting Point</Meet>
-            <Street>{street}</Street>
-            <City>
+            <Address>
+              <div>{street}</div>
               {postalcode} {city}
-            </City>
+            </Address>
+            <JoinButton toggleJoin={toggleJoin} isJoined={isJoined} />
             <Info>{info}</Info>
-          </Address>
+          </Details>
         </div>
       ) : null}
-      <ShowAndJoin>
-        <ButtonMore onClick={handleDetailsButtonClick}>
-          {showDetails ? "less" : "more"}
-        </ButtonMore>
-      </ShowAndJoin>
+      <ShowMore>
+        <MoreButton onClick={handleDetailsButtonClick}>
+          {showDetails ? "LESS" : "MORE"}
+        </MoreButton>
+      </ShowMore>
     </Wrapper>
   );
 }
@@ -73,19 +78,20 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 0.2fr 1.4fr 1.4fr;
+  grid-template-columns: 0.1fr 2fr;
 `;
 
 const Icon = styled.img`
   height: 18px;
   width: auto;
-  margin-top: 14px;
+  margin-top: -5px;
   grid-column: 1 / 2;
 `;
 
 const Name = styled.p`
-  grid-column: 2 / 4;
+  grid-column: 2 / 3;
+  margin-left: 10px;
+  margin-top: -5px;
 `;
 
 const MapImg = styled.img`
@@ -95,85 +101,98 @@ const MapImg = styled.img`
 `;
 
 const DateTime = styled.div`
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 0.5fr 1fr 1fr 0.5fr 1fr 1fr 0.5fr;
+  display: flex;
+  justify-content: space-evenly;
 `;
 
 const Date = styled.p`
-  grid-column: 2 / 4;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
 `;
 
 const Time = styled.p`
-  grid-column: 5 / 7;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
 `;
 
 const DistanceDuration = styled.div`
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 0.5fr 1fr 1fr 0.5fr 1fr 1fr 0.5fr;
+  display: flex;
+  justify-content: space-evenly;
 `;
 
 const Distance = styled.p`
-  grid-column: 2 / 4;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
 `;
 
 const Duration = styled.p`
-  grid-column: 5 / 7;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
 `;
 
-const Address = styled.div`
+const Details = styled.div`
   display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 0.1fr 1fr 1fr 0.5fr;
-  grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr;
+  grid-template-areas:
+    "headline"
+    "street"
+    "city"
+    "button"
+    "info";
 `;
 
 const Meet = styled.h3`
+  grid-area: headline;
   font-size: medium;
-  grid-column: 2 / 7;
-  grid-row: 1 / 2;
+  margin: 10px;
+  padding: 10px;
 `;
 
-const Street = styled.p`
-  grid-column: 2 / 4;
-  grid-row: 2 / 3;
-`;
-
-const City = styled.p`
-  grid-column: 5 / 7;
-  grid-row: 2 / 3;
+const Address = styled.p`
+  margin-left: 40px;
+  margin-right: 20px;
+  grid-area: street;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
 `;
 
 const Info = styled.p`
-  grid-column: 2 / 7;
-  grid-row: 3 / 5;
+  grid-area: info;
+  margin-left: 40px;
+  margin-right: 20px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
 `;
 
 const HorizontalLine = styled.hr`
-  width: 90%;
+  width: 95%;
 `;
 
-const VerticalLine = styled.div`
-  border-left: thin solid #000000;
-  margin-top: 10px;
+const ShowMore = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
-const ShowAndJoin = styled.div`
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
-`;
-
-const ButtonMore = styled.button`
-  grid-column: 3 / 5;
+const MoreButton = styled.button`
   background-color: #b4e9f5;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 60px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 10px;
   border-radius: 10px 10px 10px 10px;
 `;
 
