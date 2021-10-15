@@ -1,12 +1,8 @@
 import styled from "styled-components/macro";
 
 const JoinButton = ({ isJoined, toggleJoin }) => {
-  const handleJoin = () => {
-    toggleJoin();
-  };
-
   return (
-    <StyledJoinButton isJoined={isJoined} onClick={handleJoin}>
+    <StyledJoinButton isJoined={isJoined} onClick={toggleJoin}>
       {isJoined ? "WITHDRAW" : "JOIN ACTIVITY"}
     </StyledJoinButton>
   );

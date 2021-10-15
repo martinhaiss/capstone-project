@@ -32,15 +32,13 @@ function ActivityCard({
       </Header>
       <MapImg src={route} alt="img of map with route" />
       <DateTime>
-        <Date>Date: {date}</Date>
-
-        <Time>Start: {time}</Time>
+        <p>Date: {date}</p>
+        <p>Start: {time}</p>
       </DateTime>
       <HorizontalLine />
       <DistanceDuration>
-        <Distance>Distance: {distance}</Distance>
-
-        <Duration>Duration: {duration}</Duration>
+        <p>Distance: {distance}</p>
+        <p>Duration: {duration}</p>
       </DistanceDuration>
       <HorizontalLine />
 
@@ -74,6 +72,12 @@ const Wrapper = styled.div`
   box-shadow: 0px 0px 20px #dedede;
   display: flex;
   flex-direction: column;
+  p {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    text-align: center;
+  }
 `;
 
 const Header = styled.header`
@@ -92,6 +96,9 @@ const Name = styled.p`
   grid-column: 2 / 3;
   margin-left: 10px;
   margin-top: -5px;
+  border: none !important;
+  padding: 0px !important;
+  text-align: left !important;
 `;
 
 const MapImg = styled.img`
@@ -105,37 +112,9 @@ const DateTime = styled.div`
   justify-content: space-evenly;
 `;
 
-const Date = styled.p`
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 10px 10px 10px 10px;
-  text-align: center;
-`;
-
-const Time = styled.p`
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 10px 10px 10px 10px;
-  text-align: center;
-`;
-
 const DistanceDuration = styled.div`
   display: flex;
   justify-content: space-evenly;
-`;
-
-const Distance = styled.p`
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 10px 10px 10px 10px;
-  text-align: center;
-`;
-
-const Duration = styled.p`
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 10px 10px 10px 10px;
-  text-align: center;
 `;
 
 const Details = styled.div`
@@ -159,20 +138,12 @@ const Address = styled.p`
   margin-left: 40px;
   margin-right: 20px;
   grid-area: street;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 10px 10px 10px 10px;
-  text-align: center;
 `;
 
 const Info = styled.p`
   grid-area: info;
   margin-left: 40px;
   margin-right: 20px;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 10px 10px 10px 10px;
-  text-align: center;
 `;
 
 const HorizontalLine = styled.hr`
@@ -193,7 +164,7 @@ const MoreButton = styled.button`
   display: inline-block;
   font-size: 12px;
   margin-top: 10px;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
 `;
 
 export default ActivityCard;
