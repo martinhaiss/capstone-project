@@ -1,23 +1,9 @@
 import ActivityCard from "./Card";
 import styled from "styled-components/macro";
 import { useState } from "react";
-import saveToLocal from "../lib/saveToLocal";
 
 function CardList({ activities, onJoin }) {
-  function handleJoinButtonClick(id) {
-    const newActivities = activities.map((activity) => {
-      if (activity.id === id) {
-        return { ...activity, joined: !activity.joined };
-      }
-      return activity;
-    });
-
-    onJoin(newActivities);
-    console.log(newActivities);
-  }
-
   const joined = useState(() => {});
-
   return (
     <Content>
       {activities.map((activity) => (
@@ -35,7 +21,7 @@ function CardList({ activities, onJoin }) {
           street={activity.street}
           info={activity.info}
           joined={activity.joined}
-          onJoinButtonClick={() => handleJoinButtonClick(activity.id)}
+          onJoinButtonClick={() => onJoin(activity.id)}
           isJoined={joined.indexOf(activity.name) > -1}
         />
       ))}
