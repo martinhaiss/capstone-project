@@ -1,7 +1,8 @@
 [
   {
     "id": "1",
-    "sport": "./img/cycling.png",
+    "discipline": "cycling",
+    "icon": "./img/cycling.png",
     "name": "Zum Deich den Schafen gute Nacht sagen",
     "route": "./img/map-placeholder-2.png",
     "date": "09.11.2021",
@@ -11,12 +12,14 @@
     "postalcode": "22765",
     "city": "Hamburg",
     "street": "Museumstraße 23",
-    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "info": "Entlang der Elbe, vorbei an Schaf-Herden und der NABU Vogelstation in der Wedeler Marsch.",
+    "joined": false
   },
 
   {
     "id": "2",
-    "sport": "./img/running.png",
+    "discipline": "running",
+    "icon": "./img/running.png",
     "name": "Abendrunde Richtung Jenischpark",
     "route": "./img/map-placeholder.png",
     "date": "05.11.2021",
@@ -26,11 +29,14 @@
     "postalcode": "22765",
     "city": "Hamburg",
     "street": "Rothestraße 95",
-    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
   },
+
   {
     "id": "3",
-    "sport": "./img/cycling.png",
+    "discipline": "cycling",
+    "icon": "./img/cycling.png",
     "name": "Deichrunde am Abend",
     "route": "./img/map-placeholder-2.png",
     "date": "06.11.2021",
@@ -40,12 +46,14 @@
     "postalcode": "22765",
     "city": "Hamburg",
     "street": "Holländische Reihe 50",
-    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
   },
 
   {
     "id": "4",
-    "sport": "./img/running.png",
+    "discipline": "running",
+    "icon": "./img/running.png",
     "name": "Schnelle Runde am Mittag",
     "route": "./img/map-placeholder.png",
     "date": "08.11.2021",
@@ -55,6 +63,40 @@
     "postalcode": "22765",
     "city": "Hamburg",
     "street": "Bahrenfelder Str. 17",
-    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
+  },
+
+  {
+    "id": "5",
+    "discipline": "cycling",
+    "icon": "./img/cycling.png",
+    "name": "Testrunde",
+    "route": "./img/map-placeholder.png",
+    "date": "05.11.2021",
+    "time": "18:15 Uhr ",
+    "distance": "14 km",
+    "duration": "1:00 h",
+    "postalcode": "22765",
+    "city": "Hamburg",
+    "street": "Rothestraße 95",
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
+  },
+  {
+    "id": "6",
+    "discipline": "running",
+    "icon": "./img/running.png",
+    "name": "Run Forrest Run",
+    "route": "./img/map-placeholder.png",
+    "date": "05.11.2021",
+    "time": "18:15 Uhr ",
+    "distance": "14 km",
+    "duration": "1:00 h",
+    "postalcode": "22765",
+    "city": "Hamburg",
+    "street": "Rothestraße 95",
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
   }
 ]

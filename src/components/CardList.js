@@ -1,12 +1,29 @@
 import ActivityCard from "./Card";
-import activityData from "../data.json";
+import styled from "styled-components/macro";
+import { useState } from "react";
+import saveToLocal from "../lib/saveToLocal";
 
-function CardList() {
+function CardList({ activities, onJoin }) {
+  function handleJoinButtonClick(id) {
+    const newActivities = activities.map((activity) => {
+      if (activity.id === id) {
+        return { ...activity, joined: !activity.joined };
+      }
+      return activity;
+    });
+
+    onJoin(newActivities);
+    console.log(newActivities);
+  }
+
+  const joined = useState(() => {});
+
   return (
-    <main>
-      {activityData.map((activity) => (
+    <Content>
+      {activities.map((activity) => (
         <ActivityCard
-          sport={activity.sport}
+          key={activity.id}
+          icon={activity.icon}
           name={activity.name}
           route={activity.route}
           date={activity.date}
@@ -17,11 +34,19 @@ function CardList() {
           city={activity.city}
           street={activity.street}
           info={activity.info}
-          key={activity.id}
+          joined={activity.joined}
+          onJoinButtonClick={() => handleJoinButtonClick(activity.id)}
+          isJoined={joined.indexOf(activity.name) > -1}
         />
       ))}
-    </main>
+    </Content>
   );
 }
 
 export default CardList;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+`;

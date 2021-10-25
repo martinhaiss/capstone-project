@@ -3,7 +3,8 @@ import { useState } from "react";
 import JoinButton from "./JoinButton";
 
 function ActivityCard({
-  sport,
+  id,
+  icon,
   name,
   route,
   date,
@@ -14,20 +15,18 @@ function ActivityCard({
   city,
   street,
   info,
+  onJoinButtonClick,
+  joined,
 }) {
   const [showDetails, setshowDetails] = useState(false);
-  const [isJoined, setIsJoined] = useState(false);
-  const toggleJoin = () => {
-    setIsJoined(!isJoined);
-  };
+
   const handleDetailsButtonClick = () => {
     setshowDetails(!showDetails);
   };
-
   return (
     <Wrapper>
       <Header>
-        <Icon src={sport} />
+        <Icon src={icon} />
         <Name>{name}</Name>
       </Header>
       <MapImg src={route} alt="img of map with route" />
@@ -47,10 +46,14 @@ function ActivityCard({
           <Details>
             <Meet>Meeting Point</Meet>
             <Address>
-              <div>{street}</div>
+              <span style={{ display: "block" }}>{street}</span>
               {postalcode} {city}
             </Address>
-            <JoinButton toggleJoin={toggleJoin} isJoined={isJoined} />
+            <JoinButton
+              id={id}
+              toggleJoin={onJoinButtonClick}
+              isJoined={joined}
+            />
             <Info>{info}</Info>
           </Details>
         </div>
@@ -63,6 +66,8 @@ function ActivityCard({
     </Wrapper>
   );
 }
+
+export default ActivityCard;
 
 const Wrapper = styled.div`
   border: 0px solid #aaa;
@@ -135,15 +140,13 @@ const Meet = styled.h3`
 `;
 
 const Address = styled.p`
-  margin-left: 40px;
-  margin-right: 20px;
   grid-area: street;
+  margin: 0px 30px 5px 30px;
 `;
 
 const Info = styled.p`
   grid-area: info;
-  margin-left: 40px;
-  margin-right: 20px;
+  margin: 5px 30px 5px 30px;
 `;
 
 const HorizontalLine = styled.hr`
@@ -156,7 +159,7 @@ const ShowMore = styled.div`
 `;
 
 const MoreButton = styled.button`
-  background-color: #b4e9f5;
+  background-color: #bde3f2;
   border: none;
   padding: 10px 60px;
   text-align: center;
@@ -166,5 +169,3 @@ const MoreButton = styled.button`
   margin-top: 10px;
   border-radius: 10px;
 `;
-
-export default ActivityCard;
