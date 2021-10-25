@@ -5,7 +5,7 @@ export default {
   component: Footer,
 };
 
-const Template = (args) => <Foooter />;
+const Template = (args) => <Footer />;
 
 export const HomeLink = Template.bind({});
 
