@@ -9,6 +9,7 @@ function CardList({ activities, onJoin }) {
       {activities.map((activity) => (
         <ActivityCard
           key={activity.id}
+          discipline={activity.discipline}
           icon={activity.icon}
           name={activity.name}
           route={activity.route}

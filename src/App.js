@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CardList from "./components/CardList";
+import CreateActivity from "./components/CreateActivity";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import loadFromLocal from "./lib/loadFromLocal";
@@ -19,6 +20,12 @@ function App({ data }) {
       return activity;
     });
 
+    setActivities(newActivities);
+    saveToLocal("localActivities", newActivities);
+  }
+
+  function handleCreateActivity(newActivity) {
+    const newActivities = [newActivity, ...activities];
     setActivities(newActivities);
     saveToLocal("localActivities", newActivities);
   }
@@ -58,6 +65,10 @@ function App({ data }) {
                   activity.discipline === "running" && activity.joined === false
               )}
             />
+          </Route>
+          <Route exact path="/create">
+            {/* <CreateActivity /> */}
+            <CreateActivity onCreateActivity={handleCreateActivity} />
           </Route>
 
           <Footer />

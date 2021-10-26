@@ -6,6 +6,9 @@ import {
   MdStar,
   MdDirectionsBike,
   MdDirectionsRun,
+  MdPostAdd,
+  MdAddBox,
+  MdLibraryAdd,
 } from "react-icons/md";
 
 const navRoutes = [
@@ -25,7 +28,11 @@ const navRoutes = [
   },
   {
     path: "/running",
-    icon: <MdDirectionsRun aria-label="running-Acticities" />,
+    icon: <MdDirectionsRun aria-label="running-activities" />,
+  },
+  {
+    path: "/create",
+    icon: <MdPostAdd aria-label="create-activity" />,
   },
 ];
 
