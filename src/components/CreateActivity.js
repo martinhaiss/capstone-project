@@ -31,7 +31,7 @@ export default function CreateActivity({ onCreateActivity }) {
         <input
           type="url"
           name="route"
-          placeholder="The url of your map-image"
+          placeholder="url of your map-image"
         ></input>
       </Label>
 
@@ -47,12 +47,24 @@ export default function CreateActivity({ onCreateActivity }) {
 
       <Label>
         Distance
-        <input type="number" name="distance" required autoComplete="Off" />
+        <input
+          type="number"
+          name="distance"
+          placeholder="enter a number (unit of measurement is km)"
+          required
+          autoComplete="Off"
+        />
       </Label>
 
       <Label>
         Duration
-        <input type="number" name="duration" required autoComplete="Off" />
+        <input
+          type="number"
+          name="duration"
+          placeholder="00:00 (unit of measurement are hours) "
+          required
+          autoComplete="Off"
+        />
       </Label>
 
       <Label>
@@ -70,7 +82,7 @@ export default function CreateActivity({ onCreateActivity }) {
         <input
           type="text"
           name="street"
-          placeholder="Enter street and housenumber"
+          placeholder="street + housenumber or a distinctive place"
           required
           autoComplete="Off"
         />
@@ -81,7 +93,6 @@ export default function CreateActivity({ onCreateActivity }) {
         <textarea
           name="info"
           placeholder="max 140 characters"
-          required
           autoComplete="Off"
           rows="4"
           maxLength="140"
