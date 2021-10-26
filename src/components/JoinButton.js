@@ -1,8 +1,8 @@
 import styled from "styled-components/macro";
 
-const JoinButton = ({ isJoined, toggleJoin }) => {
+const JoinButton = ({ id, isJoined, toggleJoin }) => {
   return (
-    <StyledJoinButton isJoined={isJoined} onClick={toggleJoin}>
+    <StyledJoinButton id={id} isJoined={isJoined} onClick={toggleJoin}>
       {isJoined ? "WITHDRAW" : "JOIN ACTIVITY"}
     </StyledJoinButton>
   );
@@ -19,6 +19,6 @@ const StyledJoinButton = styled.button`
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 10px 10px 10px 10px;
-  background-color: ${({ isJoined }) => (isJoined ? "#eb6965" : "#5cd160")};
+  background-color: ${({ isJoined }) => (isJoined ? "#F2A488" : "#C3F2C2")};
 `;
 export default JoinButton;
