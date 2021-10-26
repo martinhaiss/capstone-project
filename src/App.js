@@ -20,7 +20,6 @@ function App({ data }) {
     });
 
     setActivities(newActivities);
-    console.log(newActivities);
     saveToLocal("localActivities", newActivities);
   }
 
