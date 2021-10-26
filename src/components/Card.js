@@ -141,12 +141,12 @@ const Meet = styled.h3`
 
 const Address = styled.p`
   grid-area: street;
-  margin: 0px 30px 5px 30px;
+  margin: 0px 30px 5px;
 `;
 
 const Info = styled.p`
   grid-area: info;
-  margin: 5px 30px 5px 30px;
+  margin: 5px 30px 5px;
 `;
 
 const HorizontalLine = styled.hr`
