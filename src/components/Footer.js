@@ -7,8 +7,6 @@ import {
   MdDirectionsBike,
   MdDirectionsRun,
   MdPostAdd,
-  MdAddBox,
-  MdLibraryAdd,
 } from "react-icons/md";
 
 const navRoutes = [

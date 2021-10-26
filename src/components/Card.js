@@ -19,7 +19,6 @@ function ActivityCard({
   joined,
 }) {
   const [showDetails, setshowDetails] = useState(false);
-  console.log({ discipline });
   const handleDetailsButtonClick = () => {
     setshowDetails(!showDetails);
   };
@@ -35,7 +34,7 @@ function ActivityCard({
       </Header>
       <MapImg
         src={route === "" ? "./img/placeholder.jpg" : route}
-        alt="img of map with route"
+        alt="map with route"
       />
       <DateTime>
         <p>Date: {date}</p>

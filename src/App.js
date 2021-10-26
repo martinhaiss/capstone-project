@@ -67,7 +67,6 @@ function App({ data }) {
             />
           </Route>
           <Route exact path="/create">
-            {/* <CreateActivity /> */}
             <CreateActivity onCreateActivity={handleCreateActivity} />
           </Route>
 

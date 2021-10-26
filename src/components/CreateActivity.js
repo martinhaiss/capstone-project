@@ -1,10 +1,10 @@
 import { nanoid } from "nanoid";
 import styled from "styled-components";
-import { useState } from "react";
+// import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 export default function CreateActivity({ onCreateActivity }) {
-  const [charCount, setCharCount] = useState(0);
+  // const [charCount, setCharCount] = useState(0);
   const history = useHistory();
   return (
     <Form onSubmit={handleSubmit}>
@@ -96,7 +96,7 @@ export default function CreateActivity({ onCreateActivity }) {
           autoComplete="Off"
           rows="4"
           maxLength="140"
-          onChange={(event) => setCharCount(event.target.value.length)}
+          // onChange={(event) => setCharCount(event.target.value.length)}
         />
       </Label>
 
