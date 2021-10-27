@@ -1,5 +1,11 @@
 import styled from "styled-components/macro";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import Login from "./components/Login";
 import CardList from "./components/CardList";
 import CreateActivity from "./components/CreateActivity";
 import Footer from "./components/Footer";
@@ -11,6 +17,8 @@ function App({ data }) {
   const [activities, setActivities] = useState(
     loadFromLocal(`localActivities`) ?? data
   );
+
+  const username = loadFromLocal("user");
 
   function handleJoin(id) {
     const newActivities = activities.map((activity) => {
@@ -35,9 +43,11 @@ function App({ data }) {
       <Switch>
         <Container>
           <Route exact path="/">
+            {username ? <Redirect to="/home" /> : <Login />}
+          </Route>
+          <Route exact path="/home">
             <CardList onJoin={handleJoin} activities={activities} />
           </Route>
-
           <Route exact path="/joined">
             <CardList
               onJoin={handleJoin}
@@ -69,7 +79,6 @@ function App({ data }) {
           <Route exact path="/create">
             <CreateActivity onCreateActivity={handleCreateActivity} />
           </Route>
-
           <Footer />
         </Container>
       </Switch>
