@@ -29,6 +29,7 @@ function ActivityCard({
           src={
             discipline === "cycling" ? "./img/cycling.png" : "./img/running.png"
           }
+          alt="kind of sport"
         />
         <Name>{name}</Name>
       </Header>

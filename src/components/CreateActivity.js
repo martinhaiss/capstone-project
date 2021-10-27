@@ -26,11 +26,7 @@ export default function CreateActivity({ onCreateActivity }) {
 
       <Label>
         Upload Route
-        <Input
-          type="url"
-          name="route"
-          placeholder="  url of your map-image"
-        ></Input>
+        <Input type="url" name="route" placeholder="  url of your map-image" />
       </Label>
 
       <Label>
@@ -48,7 +44,7 @@ export default function CreateActivity({ onCreateActivity }) {
           <Input
             type="number"
             name="distance"
-            placeholder="  enter number (km)"
+            placeholder="  (km)"
             required
             autoComplete="Off"
           />
@@ -58,7 +54,7 @@ export default function CreateActivity({ onCreateActivity }) {
           <Input
             type="number"
             name="duration"
-            placeholder="  00:00 (hours)"
+            placeholder="  (hours)"
             required
             autoComplete="Off"
           />
@@ -69,7 +65,7 @@ export default function CreateActivity({ onCreateActivity }) {
         <Input
           type="text"
           name="street"
-          placeholder="  street and housenumber or distinctive place"
+          placeholder="  street + housenumber or distinctive place"
           required
           autoComplete="Off"
         />
