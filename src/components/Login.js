@@ -1,16 +1,14 @@
 import collabLogo from "../img/collab-logo.png";
 import styled from "styled-components/macro";
 import saveToLocal from "../lib/saveToLocal";
-import { useHistory } from "react-router-dom";
 
-function Login() {
-  const history = useHistory();
+function Login({ onHandleSetUsername }) {
   function handleSubmit(loginEvent) {
     loginEvent.preventDefault();
     const form = loginEvent.target;
     const { username } = form.elements;
     saveToLocal("user", username.value);
-    history.push("/home");
+    onHandleSetUsername(username.value);
   }
 
   return (
