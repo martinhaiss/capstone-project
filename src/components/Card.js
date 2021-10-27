@@ -4,7 +4,7 @@ import JoinButton from "./JoinButton";
 
 function ActivityCard({
   id,
-  icon,
+  discipline,
   name,
   route,
   date,
@@ -19,25 +19,32 @@ function ActivityCard({
   joined,
 }) {
   const [showDetails, setshowDetails] = useState(false);
-
   const handleDetailsButtonClick = () => {
     setshowDetails(!showDetails);
   };
   return (
     <Wrapper>
       <Header>
-        <Icon src={icon} />
+        <Icon
+          src={
+            discipline === "cycling" ? "./img/cycling.png" : "./img/running.png"
+          }
+          alt="kind of sport"
+        />
         <Name>{name}</Name>
       </Header>
-      <MapImg src={route} alt="img of map with route" />
+      <MapImg
+        src={route === "" ? "./img/placeholder.jpg" : route}
+        alt="map with route"
+      />
       <DateTime>
         <p>Date: {date}</p>
         <p>Start: {time}</p>
       </DateTime>
       <HorizontalLine />
       <DistanceDuration>
-        <p>Distance: {distance}</p>
-        <p>Duration: {duration}</p>
+        <p>Distance: {distance} km</p>
+        <p>Duration: {duration} h</p>
       </DistanceDuration>
       <HorizontalLine />
 
