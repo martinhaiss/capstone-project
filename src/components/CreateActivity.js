@@ -23,76 +23,75 @@ export default function CreateActivity({ onCreateActivity }) {
 
       <Label>
         Name Of Your Activity
-        <input type="text" name="name" required autoComplete="Off" />
+        <Input type="text" name="name" required autoComplete="Off" />
       </Label>
 
       <Label>
         Upload Route
-        <input
+        <Input
           type="url"
           name="route"
-          placeholder="url of your map-image"
-        ></input>
+          placeholder="  url of your map-image"
+        ></Input>
       </Label>
 
       <Label>
         Date
-        <input type="date" name="date" required />
+        <Input type="date" name="date" required />
       </Label>
 
       <Label>
         Start-Time
-        <input type="time" name="time" required />
+        <Input type="time" name="time" required />
       </Label>
-
-      <Label>
-        Distance
-        <input
-          type="number"
-          name="distance"
-          placeholder="enter a number (unit of measurement is km)"
-          required
-          autoComplete="Off"
-        />
-      </Label>
-
-      <Label>
-        Duration
-        <input
-          type="number"
-          name="duration"
-          placeholder="00:00 (unit of measurement are hours) "
-          required
-          autoComplete="Off"
-        />
-      </Label>
-
-      <Label>
-        Postal Code
-        <input type="number" name="postalcode" required autoComplete="Off" />
-      </Label>
-
-      <Label>
-        City
-        <input type="text" name="city" required autoComplete="Off" />
-      </Label>
-
+      <Container>
+        <Label>
+          Distance
+          <Input
+            type="number"
+            name="distance"
+            placeholder="  enter number (km)"
+            required
+            autoComplete="Off"
+          />
+        </Label>
+        <Label>
+          Duration
+          <Input
+            type="number"
+            name="duration"
+            placeholder="  00:00 (hours)"
+            required
+            autoComplete="Off"
+          />
+        </Label>
+      </Container>
       <Label>
         Start-Point
-        <input
+        <Input
           type="text"
           name="street"
-          placeholder="street + housenumber or a distinctive place"
+          placeholder="  street + housenumber or a distinctive place"
           required
           autoComplete="Off"
         />
       </Label>
+      <Container>
+        <Label>
+          Postal Code
+          <Input type="number" name="postalcode" required autoComplete="Off" />
+        </Label>
+        <Label>
+          City
+          <Input type="text" name="city" required autoComplete="Off" />
+        </Label>
+      </Container>
 
       <Label>
         Info
-        <textarea
+        <Textarea
           name="info"
-          placeholder="max 140 characters"
+          placeholder=" max 140 characters"
           autoComplete="Off"
           rows="4"
           maxLength="140"
@@ -148,18 +147,41 @@ const Form = styled.form`
   border-radius: 13px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 15px;
+`;
+
+const Input = styled.input`
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0px 0px 20px #dedede;
+  margin-top: 5px;
+  font-size: 15px;
 `;
 
 const RadioButtons = styled.div`
   display: flex;
-  gap: 6rem;
+  gap: 15%;
   justify-content: flex-start;
+  margin-top: 10px;
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+`;
+
+const Textarea = styled.textarea`
+  border-radius: 7px;
+  box-shadow: 0px 0px 20px #dedede;
+  border: none;
+  margin-top: 5px;
 `;
 
 const Label = styled.label`
   display: flex;
   flex-direction: column;
+  font-size: 15px;
 `;
 
 const Button = styled.button`
@@ -169,7 +191,6 @@ const Button = styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
-  margin-top: 10px;
   border-radius: 10px;
+  margin-top: 10px;
 `;
