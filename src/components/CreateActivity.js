@@ -1,10 +1,8 @@
 import { nanoid } from "nanoid";
 import styled from "styled-components";
-// import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 export default function CreateActivity({ onCreateActivity }) {
-  // const [charCount, setCharCount] = useState(0);
   const history = useHistory();
   return (
     <Form onSubmit={handleSubmit}>
@@ -71,7 +69,7 @@ export default function CreateActivity({ onCreateActivity }) {
         <Input
           type="text"
           name="street"
-          placeholder="  street + housenumber or a distinctive place"
+          placeholder="  street and housenumber or distinctive place"
           required
           autoComplete="Off"
         />
@@ -95,7 +93,6 @@ export default function CreateActivity({ onCreateActivity }) {
           autoComplete="Off"
           rows="4"
           maxLength="140"
-          // onChange={(event) => setCharCount(event.target.value.length)}
         />
       </Label>
 
