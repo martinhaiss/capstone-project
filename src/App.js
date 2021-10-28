@@ -6,9 +6,10 @@ import {
   Redirect,
 } from "react-router-dom";
 import Login from "./components/Login";
+import Header from "./components/Header";
 import CardList from "./components/CardList";
-import CreateActivity from "./components/CreateActivity";
 import Footer from "./components/Footer";
+import CreateActivity from "./components/CreateActivity";
 import { useState } from "react";
 import loadFromLocal from "./lib/loadFromLocal";
 import saveToLocal from "./lib/saveToLocal";
@@ -44,6 +45,7 @@ function App({ data }) {
   return (
     <Router>
       <Container>
+        <Header />
         <Switch>
           <Route exact path="/">
             {username ? (
@@ -127,5 +129,5 @@ const Container = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 0.125fr;
+  grid-template-rows: 0.125fr 2fr 0.125fr;
 `;
