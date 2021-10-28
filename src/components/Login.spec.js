@@ -24,14 +24,14 @@ describe("Login", () => {
     expect(heading).toHaveTextContent("Welcome to Collab");
   });
 
-  it("has an input field for the user's name", () => {
+  it("has an input field for the user's name, which requires an input", () => {
     render(<Login />);
 
     const inputEl = screen.getByPlaceholderText("Please enter your name");
     expect(inputEl).toBeRequired();
   });
 
-  it('user can type "Klammerfische" in input', () => {
+  it('is possible for the user to type "Klammerfische" into the input field', () => {
     render(<Login />);
 
     const inputEl = screen.getByPlaceholderText("Please enter your name");
