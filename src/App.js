@@ -16,7 +16,7 @@ import saveToLocal from "./lib/saveToLocal";
 
 function App({ data }) {
   const [activities, setActivities] = useState(
-    loadFromLocal(`localActivities`) ?? data
+    loadFromLocal("localActivities") ?? data
   );
 
   const [username, setUsername] = useState(loadFromLocal("user") ?? "");
@@ -45,7 +45,12 @@ function App({ data }) {
   return (
     <Router>
       <Container>
-        <Header />
+        <Route
+          exact
+          path={["/home", "/joined", "/cycling", "/running", "/create"]}
+        >
+          <Header />
+        </Route>
         <Switch>
           <Route exact path="/">
             {username ? (
@@ -111,6 +116,7 @@ function App({ data }) {
             )}
           </Route>
         </Switch>
+
         <Route
           exact
           path={["/home", "/joined", "/cycling", "/running", "/create"]}

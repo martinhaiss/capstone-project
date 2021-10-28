@@ -1,9 +1,8 @@
 import styled from "styled-components/macro";
 import loadFromLocal from "../lib/loadFromLocal";
 
-const user = loadFromLocal("user");
-
 function Header() {
+  const user = loadFromLocal("user");
   return (
     <Wrapper>
       <p>Hello {user}, here are some activities for you.</p>
@@ -18,5 +17,6 @@ const Wrapper = styled.div`
   p {
     font-size: 13px;
     margin-left: 15px;
+    padding: 2px;
   }
 `;
