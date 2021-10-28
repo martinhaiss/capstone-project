@@ -6,7 +6,7 @@ const user = loadFromLocal("user");
 function Header() {
   return (
     <Wrapper>
-      <p>Hello {user}, here are some activities you can join.</p>
+      <p>Hello {user}, here are some activities for you.</p>
     </Wrapper>
   );
 }
