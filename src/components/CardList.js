@@ -1,9 +1,7 @@
 import ActivityCard from "./Card";
 import styled from "styled-components/macro";
-import { useState } from "react";
 
 function CardList({ activities, onJoin }) {
-  const joined = useState(() => {});
   return (
     <Content>
       {activities.map((activity) => (
@@ -23,7 +21,6 @@ function CardList({ activities, onJoin }) {
           info={activity.info}
           joined={activity.joined}
           onJoinButtonClick={() => onJoin(activity.id)}
-          isJoined={joined.indexOf(activity.name) > -1}
         />
       ))}
     </Content>
@@ -35,5 +32,5 @@ export default CardList;
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: auto;
 `;

@@ -13,7 +13,7 @@ function Login({ onHandleSetUsername }) {
 
   return (
     <Wrapper>
-      <img src={collabLogo} alt="collab" />
+      <img src={collabLogo} alt="" />
       <h1>Welcome to Collab</h1>
       <form
         onSubmit={(event) => {
@@ -41,13 +41,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 30% auto 0 auto;
-  max-width: 75%;
+  max-width: 500px;
   h1 {
     font-size: 40px;
     text-align: center;
   }
   img {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     border-radius: 7px;
     box-shadow: 0px 0px 20px #dedede;
