@@ -11,7 +11,7 @@ import {
 
 const navRoutes = [
   {
-    path: "/",
+    path: "/home",
     icon: <MdHome aria-label="home" />,
   },
 

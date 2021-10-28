@@ -1,5 +1,11 @@
 import styled from "styled-components/macro";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import Login from "./components/Login";
 import CardList from "./components/CardList";
 import CreateActivity from "./components/CreateActivity";
 import Footer from "./components/Footer";
@@ -11,6 +17,11 @@ function App({ data }) {
   const [activities, setActivities] = useState(
     loadFromLocal(`localActivities`) ?? data
   );
+
+  const [username, setUsername] = useState(loadFromLocal("user") ?? "");
+  function handleSetUsername(value) {
+    setUsername(value);
+  }
 
   function handleJoin(id) {
     const newActivities = activities.map((activity) => {
@@ -32,47 +43,79 @@ function App({ data }) {
 
   return (
     <Router>
-      <Switch>
-        <Container>
+      <Container>
+        <Switch>
           <Route exact path="/">
-            <CardList onJoin={handleJoin} activities={activities} />
+            {username ? (
+              <Redirect to="/home" />
+            ) : (
+              <Login onHandleSetUsername={handleSetUsername} />
+            )}
           </Route>
-
+          <Route exact path="/home">
+            {username ? (
+              <CardList onJoin={handleJoin} activities={activities} />
+            ) : (
+              <Redirect to="/" />
+            )}
+          </Route>
           <Route exact path="/joined">
-            <CardList
-              onJoin={handleJoin}
-              activities={activities.filter(
-                (activity) => activity.joined === true
-              )}
-            />
+            {username ? (
+              <CardList
+                onJoin={handleJoin}
+                activities={activities.filter(
+                  (activity) => activity.joined === true
+                )}
+              />
+            ) : (
+              <Redirect to="/" />
+            )}
           </Route>
 
           <Route exact path="/cycling">
-            <CardList
-              onJoin={handleJoin}
-              activities={activities.filter(
-                (activity) =>
-                  activity.discipline === "cycling" && activity.joined === false
-              )}
-            />
+            {username ? (
+              <CardList
+                onJoin={handleJoin}
+                activities={activities.filter(
+                  (activity) =>
+                    activity.discipline === "cycling" &&
+                    activity.joined === false
+                )}
+              />
+            ) : (
+              <Redirect to="/" />
+            )}
           </Route>
 
           <Route exact path="/running">
-            <CardList
-              onJoin={handleJoin}
-              activities={activities.filter(
-                (activity) =>
-                  activity.discipline === "running" && activity.joined === false
-              )}
-            />
+            {username ? (
+              <CardList
+                onJoin={handleJoin}
+                activities={activities.filter(
+                  (activity) =>
+                    activity.discipline === "running" &&
+                    activity.joined === false
+                )}
+              />
+            ) : (
+              <Redirect to="/" />
+            )}
           </Route>
           <Route exact path="/create">
-            <CreateActivity onCreateActivity={handleCreateActivity} />
+            {username ? (
+              <CreateActivity onCreateActivity={handleCreateActivity} />
+            ) : (
+              <Redirect to="/" />
+            )}
           </Route>
-
+        </Switch>
+        <Route
+          exact
+          path={["/home", "/joined", "/cycling", "/running", "/create"]}
+        >
           <Footer />
-        </Container>
-      </Switch>
+        </Route>
+      </Container>
     </Router>
   );
 }
