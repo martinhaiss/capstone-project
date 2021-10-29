@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import { useState } from "react";
 import JoinButton from "./JoinButton";
-import { VscTrash } from "react-icons/vsc";
+import { VscTrash as DeleteIcon } from "react-icons/vsc";
 
 function ActivityCard({
   id,
@@ -41,7 +41,7 @@ function ActivityCard({
             onDeleteButtonClick(id);
           }}
         >
-          <VscTrash style={{ width: "20", height: "20" }} aria-label="home" />
+          <DeleteIcon style={{ width: "20", height: "20" }} aria-label="home" />
         </DeleteButton>
       </Header>
       <MapImg

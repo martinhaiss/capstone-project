@@ -41,7 +41,6 @@ function App({ data }) {
     setActivities(newActivities);
     saveToLocal("localActivities", newActivities);
   }
-  //------------Delete Button -----------------
 
   function handleDeleteButton(id) {
     const filteredActivites = activities.filter(
@@ -52,7 +51,6 @@ function App({ data }) {
     saveToLocal("localActivities", filteredActivites);
   }
 
-  //------------------------------------------------
   return (
     <Router>
       <Container>
