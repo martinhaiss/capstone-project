@@ -109,8 +109,8 @@ const Header = styled.header`
 `;
 
 const Icon = styled.img`
-  height: 18px;
-  width: auto;
+  height: 20px;
+  width: 20px;
   margin-top: -5px;
   grid-column: 1 / 2;
 `;
