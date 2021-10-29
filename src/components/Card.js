@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 import { useState } from "react";
 import JoinButton from "./JoinButton";
+import { VscTrash } from "react-icons/vsc";
 
 function ActivityCard({
   id,
@@ -16,6 +17,7 @@ function ActivityCard({
   street,
   info,
   onJoinButtonClick,
+  onDeleteButtonClick,
   joined,
 }) {
   const [showDetails, setshowDetails] = useState(false);
@@ -27,11 +29,20 @@ function ActivityCard({
       <Header>
         <Icon
           src={
-            discipline === "cycling" ? "./img/cycling.png" : "./img/running.png"
+            discipline === "cycling"
+              ? "./img/directions_bike.svg"
+              : "./img/directions_run.svg"
           }
           alt="kind of sport"
         />
         <Name>{name}</Name>
+        <DeleteButton
+          onClick={() => {
+            onDeleteButtonClick(id);
+          }}
+        >
+          <VscTrash style={{ width: "20", height: "20" }} aria-label="home" />
+        </DeleteButton>
       </Header>
       <MapImg
         src={route === "" ? "./img/placeholder.jpg" : route}
@@ -94,14 +105,22 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   display: grid;
-  grid-template-columns: 0.1fr 2fr;
+  grid-template-columns: 0.1fr 2fr 0.1fr;
 `;
 
 const Icon = styled.img`
-  height: 18px;
-  width: auto;
+  height: 20px;
+  width: 20px;
   margin-top: -5px;
   grid-column: 1 / 2;
+`;
+
+const DeleteButton = styled.button`
+  color: black;
+  grid-column: 3 / 4;
+  border: none;
+  margin-top: -15px;
+  background: transparent;
 `;
 
 const Name = styled.p`

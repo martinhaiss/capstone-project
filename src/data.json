@@ -2,7 +2,7 @@
   {
     "id": "1",
     "discipline": "cycling",
-    "icon": "./img/cycling.png",
+
     "name": "Zum Deich den Schafen gute Nacht sagen",
     "route": "./img/map-placeholder-2.png",
     "date": "09.11.2021",
@@ -19,7 +19,7 @@
   {
     "id": "2",
     "discipline": "running",
-    "icon": "./img/running.png",
+
     "name": "Abendrunde Richtung Jenischpark",
     "route": "./img/map-placeholder.png",
     "date": "05.11.2021",
@@ -36,7 +36,7 @@
   {
     "id": "3",
     "discipline": "cycling",
-    "icon": "./img/cycling.png",
+
     "name": "Deichrunde am Abend",
     "route": "./img/map-placeholder-2.png",
     "date": "06.11.2021",
@@ -53,7 +53,7 @@
   {
     "id": "4",
     "discipline": "running",
-    "icon": "./img/running.png",
+
     "name": "Schnelle Runde am Mittag",
     "route": "./img/map-placeholder.png",
     "date": "08.11.2021",
@@ -70,7 +70,7 @@
   {
     "id": "5",
     "discipline": "cycling",
-    "icon": "./img/cycling.png",
+
     "name": "Testrunde",
     "route": "./img/map-placeholder.png",
     "date": "05.11.2021",
@@ -86,7 +86,7 @@
   {
     "id": "6",
     "discipline": "running",
-    "icon": "./img/running.png",
+
     "name": "Run Forrest Run",
     "route": "./img/map-placeholder.png",
     "date": "05.11.2021",

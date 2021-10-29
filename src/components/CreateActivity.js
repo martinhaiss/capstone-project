@@ -44,6 +44,7 @@ export default function CreateActivity({ onCreateActivity }) {
           <Input
             type="number"
             name="distance"
+            step="0.1"
             placeholder="  (km)"
             required
             autoComplete="Off"
@@ -54,6 +55,7 @@ export default function CreateActivity({ onCreateActivity }) {
           <Input
             type="number"
             name="duration"
+            step="0.1"
             placeholder="  (hours)"
             required
             autoComplete="Off"
@@ -134,7 +136,6 @@ export default function CreateActivity({ onCreateActivity }) {
 
 const Form = styled.form`
   box-shadow: 0px 0px 20px #dedede;
-  margin: 15px;
   padding: 15px;
   padding: 1.3rem;
   border-radius: 13px;
@@ -155,7 +156,7 @@ const RadioButtons = styled.div`
   display: flex;
   gap: 15%;
   justify-content: flex-start;
-  margin-top: 10px;
+  margin-top: 5px;
 `;
 
 const Container = styled.div`
