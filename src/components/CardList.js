@@ -1,12 +1,13 @@
 import ActivityCard from "./Card";
 import styled from "styled-components/macro";
 
-function CardList({ activities, onJoin }) {
+function CardList({ activities, onJoin, onDeleteButtonClick }) {
   return (
     <Content>
       {activities.map((activity) => (
         <ActivityCard
           key={activity.id}
+          id={activity.id}
           discipline={activity.discipline}
           icon={activity.icon}
           name={activity.name}
@@ -21,6 +22,7 @@ function CardList({ activities, onJoin }) {
           info={activity.info}
           joined={activity.joined}
           onJoinButtonClick={() => onJoin(activity.id)}
+          onDeleteButtonClick={onDeleteButtonClick}
         />
       ))}
     </Content>
