@@ -29,7 +29,9 @@ function ActivityCard({
       <Header>
         <Icon
           src={
-            discipline === "cycling" ? "./img/cycling.png" : "./img/running.png"
+            discipline === "cycling"
+              ? "./img/directions_bike.svg"
+              : "./img/directions_run.svg"
           }
           alt="kind of sport"
         />
