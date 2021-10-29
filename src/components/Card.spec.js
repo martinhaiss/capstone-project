@@ -14,14 +14,14 @@ describe("Card", () => {
     const name = screen.getByText("Zum Deich den Schafen gute Nacht sagen");
     expect(name).toBeInTheDocument();
 
-    const img = screen.getByAltText("img of map with route");
+    const img = screen.getByAltText("map with route");
     expect(img).toBeInTheDocument();
   });
 });
 
-it("renders one button", () => {
+it("renders two button", () => {
   render(<Card />);
 
   const Button = screen.getAllByRole("button");
-  expect(Button).toHaveLength(1);
+  expect(Button).toHaveLength(2);
 });

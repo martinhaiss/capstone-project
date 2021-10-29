@@ -5,7 +5,7 @@ function Header() {
   const user = loadFromLocal("user");
   return (
     <Wrapper>
-      <p>Hello {user}, here are some activities for you.</p>
+      <p>Hi, {user}. Here are some activities for you.</p>
     </Wrapper>
   );
 }

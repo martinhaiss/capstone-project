@@ -41,7 +41,18 @@ function App({ data }) {
     setActivities(newActivities);
     saveToLocal("localActivities", newActivities);
   }
+  //------------Delete Button -----------------
 
+  function handleDeleteButton(id) {
+    const filteredActivites = activities.filter(
+      (activity) => activity.id !== id
+    );
+
+    setActivities(filteredActivites);
+    saveToLocal("localActivities", filteredActivites);
+  }
+
+  //------------------------------------------------
   return (
     <Router>
       <Container>
@@ -61,7 +72,11 @@ function App({ data }) {
           </Route>
           <Route exact path="/home">
             {username ? (
-              <CardList onJoin={handleJoin} activities={activities} />
+              <CardList
+                onJoin={handleJoin}
+                activities={activities}
+                onDeleteButtonClick={handleDeleteButton}
+              />
             ) : (
               <Redirect to="/" />
             )}
@@ -70,6 +85,7 @@ function App({ data }) {
             {username ? (
               <CardList
                 onJoin={handleJoin}
+                onDeleteButtonClick={handleDeleteButton}
                 activities={activities.filter(
                   (activity) => activity.joined === true
                 )}
@@ -83,6 +99,7 @@ function App({ data }) {
             {username ? (
               <CardList
                 onJoin={handleJoin}
+                onDeleteButtonClick={handleDeleteButton}
                 activities={activities.filter(
                   (activity) =>
                     activity.discipline === "cycling" &&
@@ -98,6 +115,7 @@ function App({ data }) {
             {username ? (
               <CardList
                 onJoin={handleJoin}
+                onDeleteButtonClick={handleDeleteButton}
                 activities={activities.filter(
                   (activity) =>
                     activity.discipline === "running" &&
