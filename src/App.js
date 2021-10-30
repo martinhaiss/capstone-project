@@ -92,9 +92,7 @@ function App({ data }) {
               <CardList
                 onJoin={handleJoin}
                 onDeleteButtonClick={handleDeleteButton}
-                activities={activities.filter(
-                  (activity) => activity.joined === false
-                )}
+                activities={activities}
               />
             ) : (
               <Redirect to="/" />

@@ -141,6 +141,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  overflow-y: auto;
 `;
 
 const Input = styled.input`

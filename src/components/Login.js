@@ -15,7 +15,7 @@ function Login({ onHandleSetUsername }) {
     <Wrapper>
       <img src={collabLogo} alt="" />
       <h1>Welcome to Collab</h1>
-      <form
+      <Form
         onSubmit={(event) => {
           handleSubmit(event);
         }}
@@ -25,11 +25,19 @@ function Login({ onHandleSetUsername }) {
           name="username"
           id="name"
           autoComplete="off"
-          placeholder="Please enter your name"
+          placeholder="Username"
+          required
+        />
+        <Input
+          type="password"
+          name="password"
+          id="password"
+          autoComplete="off"
+          placeholder="Password"
           required
         />
         <Button>Login</Button>
-      </form>
+      </Form>
     </Wrapper>
   );
 }
@@ -54,6 +62,13 @@ const Wrapper = styled.div`
   }
 `;
 
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+`;
+
 const Input = styled.input`
   padding: 10px 30px;
   border: none;
@@ -64,7 +79,10 @@ const Input = styled.input`
 const Button = styled.button`
   background-color: #bde3f2;
   border: none;
-  padding: 10px 30px;
+  padding: 10px;
+  width: 60%;
+  align-self: center;
+
   text-align: center;
   text-decoration: none;
   display: inline-block;
