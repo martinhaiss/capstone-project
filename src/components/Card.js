@@ -41,7 +41,10 @@ function ActivityCard({
             onDeleteButtonClick(id);
           }}
         >
-          <DeleteIcon style={{ width: "20", height: "20" }} aria-label="home" />
+          <DeleteIcon
+            style={{ width: "20", height: "20" }}
+            aria-label="delete activity"
+          />
         </DeleteButton>
       </Header>
       <MapImg
@@ -88,6 +91,7 @@ function ActivityCard({
 export default ActivityCard;
 
 const Wrapper = styled.div`
+  background: whitesmoke;
   border: 0px solid #aaa;
   margin: 15px;
   padding: 15px;
