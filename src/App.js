@@ -21,10 +21,12 @@ function App({ data }) {
   );
 
   const [searchTerm, setSearchTerm] = useState("");
+
+  const [username, setUsername] = useState(loadFromLocal("user") ?? "");
+
   const searchedActivities =
     searchActivities(activities, searchTerm) || activities;
 
-  const [username, setUsername] = useState(loadFromLocal("user") ?? "");
   function handleSetUsername(value) {
     setUsername(value);
   }
@@ -89,7 +91,6 @@ function App({ data }) {
             {username ? (
               <CardList
                 onJoin={handleJoin}
-                activities={activities}
                 onDeleteButtonClick={handleDeleteButton}
                 activities={activities.filter(
                   (activity) => activity.joined === false

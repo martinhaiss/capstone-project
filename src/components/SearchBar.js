@@ -1,14 +1,11 @@
 import styled from "styled-components/macro";
-import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 function SearchBar({ searchTerm, onChange }) {
-  const [isToggled, setIsToggled] = useState(false);
   const history = useHistory();
 
   function handleSubmit(event) {
     event.preventDefault();
-    setIsToggled(!isToggled);
     history.push("/search");
   }
 
@@ -20,7 +17,6 @@ function SearchBar({ searchTerm, onChange }) {
           type="text"
           name="input"
           placeholder="Suche nach PLZ oder Stadt"
-          isToggled={isToggled}
           value={searchTerm}
           onChange={onChange}
         />

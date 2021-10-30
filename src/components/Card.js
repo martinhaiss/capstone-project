@@ -43,7 +43,7 @@ function ActivityCard({
         >
           <DeleteIcon
             style={{ width: "20", height: "20" }}
-            aria-label="delete"
+            aria-label="delete activity"
           />
         </DeleteButton>
       </Header>
