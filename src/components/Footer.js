@@ -63,11 +63,11 @@ const Navigation = styled.nav`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #e9f2ea;
+  background-color: #575859;
 `;
 
 const NavigationLink = styled(NavLink)`
-  color: black;
+  color: white;
   &.${(props) => props.activeClassName} {
     color: #f27649;
   }

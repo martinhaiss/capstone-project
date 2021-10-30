@@ -91,6 +91,9 @@ function App({ data }) {
                 onJoin={handleJoin}
                 activities={activities}
                 onDeleteButtonClick={handleDeleteButton}
+                activities={activities.filter(
+                  (activity) => activity.joined === false
+                )}
               />
             ) : (
               <Redirect to="/" />
@@ -184,6 +187,7 @@ export default App;
 
 const Container = styled.div`
   max-width: 500px;
+  margin: auto;
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;

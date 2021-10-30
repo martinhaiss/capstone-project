@@ -18,10 +18,11 @@ export default Header;
 const Wrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  background-color: #e9f2ea;
+  background-color: #575859;
   p {
     font-size: 13px;
-    margin-left: 15px;
-    padding: 2px;
+    margin-left: 10px;
+    margin-top: 17px;
+    color: white;
   }
 `;

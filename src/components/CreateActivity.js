@@ -135,7 +135,6 @@ export default function CreateActivity({ onCreateActivity }) {
 }
 
 const Form = styled.form`
-  box-shadow: 0px 0px 20px #dedede;
   padding: 15px;
   padding: 1.3rem;
   border-radius: 13px;

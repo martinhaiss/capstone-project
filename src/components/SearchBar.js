@@ -35,11 +35,12 @@ const Form = styled.form`
   margin-left: 15px;
   padding: 2px;
   height: 30px;
+  margin-top: 4px;
 `;
 
 const Input = styled.input`
   color: black;
-  width: 300px;
+  width: 250px;
   height: 25px;
   border: none;
   border-radius: 10px;
