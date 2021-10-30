@@ -36,7 +36,6 @@
   {
     "id": "3",
     "discipline": "cycling",
-
     "name": "Deichrunde am Abend",
     "route": "./img/map-placeholder-2.png",
     "date": "06.11.2021",
@@ -53,7 +52,6 @@
   {
     "id": "4",
     "discipline": "running",
-
     "name": "Schnelle Runde am Mittag",
     "route": "./img/map-placeholder.png",
     "date": "08.11.2021",
@@ -70,7 +68,6 @@
   {
     "id": "5",
     "discipline": "cycling",
-
     "name": "Testrunde",
     "route": "./img/map-placeholder.png",
     "date": "05.11.2021",
@@ -86,7 +83,6 @@
   {
     "id": "6",
     "discipline": "running",
-
     "name": "Run Forrest Run",
     "route": "./img/map-placeholder.png",
     "date": "05.11.2021",
@@ -96,6 +92,83 @@
     "postalcode": "22765",
     "city": "Hamburg",
     "street": "Rothestraße 95",
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
+  },
+  {
+    "id": "7",
+    "discipline": "running",
+    "name": "Search and find",
+    "route": "./img/map-placeholder.png",
+    "date": "05.11.2021",
+    "time": "18:15 Uhr ",
+    "distance": "14",
+    "duration": "1:00",
+    "postalcode": "22999",
+    "city": "Hamburg",
+    "street": "Rothestraße 95",
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
+  },
+
+  {
+    "id": "8",
+    "discipline": "running",
+    "name": "Search and",
+    "route": "./img/map-placeholder.png",
+    "date": "05.11.2021",
+    "time": "18:15 Uhr ",
+    "distance": "14",
+    "duration": "1:00",
+    "postalcode": "22995",
+    "city": "Hamburg",
+    "street": "Rothestraße 95",
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
+  },
+
+  {
+    "id": "9",
+    "discipline": "running",
+    "name": "Kessel Run",
+    "route": "./img/map-placeholder.png",
+    "date": "05.11.2021",
+    "time": "18:15 Uhr ",
+    "distance": "14",
+    "duration": "1:00",
+    "postalcode": "70499",
+    "city": "Stuttgart",
+    "street": "Rothestraße 95",
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
+  },
+  {
+    "id": "10",
+    "discipline": "cycling",
+    "name": "Um den Bundestag radeln",
+    "route": "./img/map-placeholder.png",
+    "date": "05.11.2021",
+    "time": "18:15 Uhr ",
+    "distance": "14",
+    "duration": "1:00",
+    "postalcode": "11011",
+    "city": "Berlin",
+    "street": "Rothestraße 95",
+    "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "joined": false
+  },
+  {
+    "id": "11",
+    "discipline": "running",
+    "name": "Search and",
+    "route": "./img/map-placeholder.png",
+    "date": "05.11.2021",
+    "time": "18:15 Uhr ",
+    "distance": "14",
+    "duration": "1:00",
+    "postalcode": "22457",
+    "city": "Hamburg",
+    "street": "Brummerskamp 46",
     "info": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     "joined": false
   }

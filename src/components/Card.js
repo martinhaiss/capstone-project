@@ -41,7 +41,10 @@ function ActivityCard({
             onDeleteButtonClick(id);
           }}
         >
-          <DeleteIcon style={{ width: "20", height: "20" }} aria-label="home" />
+          <DeleteIcon
+            style={{ width: "20", height: "20" }}
+            aria-label="delete"
+          />
         </DeleteButton>
       </Header>
       <MapImg

@@ -13,11 +13,16 @@ import CreateActivity from "./components/CreateActivity";
 import { useState } from "react";
 import loadFromLocal from "./lib/loadFromLocal";
 import saveToLocal from "./lib/saveToLocal";
+import searchActivities from "./lib/searchActivities";
 
 function App({ data }) {
   const [activities, setActivities] = useState(
     loadFromLocal("localActivities") ?? data
   );
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const searchedActivities =
+    searchActivities(activities, searchTerm) || activities;
 
   const [username, setUsername] = useState(loadFromLocal("user") ?? "");
   function handleSetUsername(value) {
@@ -56,9 +61,21 @@ function App({ data }) {
       <Container>
         <Route
           exact
-          path={["/home", "/joined", "/cycling", "/running", "/create"]}
+          path={[
+            "/home",
+            "/joined",
+            "/cycling",
+            "/running",
+            "/create",
+            "/search",
+          ]}
         >
-          <Header />
+          <Header
+            searchTerm={searchTerm}
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
         </Route>
         <Switch>
           <Route exact path="/">
@@ -131,11 +148,30 @@ function App({ data }) {
               <Redirect to="/" />
             )}
           </Route>
+
+          <Route exact path="/search">
+            {username ? (
+              <CardList
+                onJoin={handleJoin}
+                activities={searchedActivities}
+                onDeleteButtonClick={handleDeleteButton}
+              />
+            ) : (
+              <Redirect to="/" />
+            )}
+          </Route>
         </Switch>
 
         <Route
           exact
-          path={["/home", "/joined", "/cycling", "/running", "/create"]}
+          path={[
+            "/home",
+            "/joined",
+            "/cycling",
+            "/running",
+            "/create",
+            "/search",
+          ]}
         >
           <Footer />
         </Route>
