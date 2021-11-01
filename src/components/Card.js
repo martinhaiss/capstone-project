@@ -67,12 +67,12 @@ function ActivityCard({
           <HorizontalLine />
           <Details>
             <Clickarena onClick={handleDetailsClick}>
-              <Meet>Meeting Point</Meet>
+              <h3>Meeting Point</h3>
               <Address>
                 <span style={{ display: "block" }}>{street}</span>
                 {postalcode} {city}
               </Address>
-              <Meet>Info</Meet>
+              <h3>Info</h3>
               <Info>{info}</Info>
             </Clickarena>
             <JoinButton
@@ -103,6 +103,12 @@ const Wrapper = styled.div`
     border: 1px solid #cccccc;
     border-radius: 10px;
     text-align: center;
+  }
+  h3 {
+    grid-area: headline;
+    font-size: medium;
+    margin: 10px;
+    padding: 10px;
   }
 `;
 
@@ -163,12 +169,12 @@ const Details = styled.div`
     "button";
 `;
 
-const Meet = styled.h3`
-  grid-area: headline;
-  font-size: medium;
-  margin: 10px;
-  padding: 10px;
-`;
+// const MoreInfo = styled.h3`
+//   grid-area: headline;
+//   font-size: medium;
+//   margin: 10px;
+//   padding: 10px;
+// `;
 
 const Address = styled.p`
   grid-area: street;
