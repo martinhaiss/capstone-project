@@ -24,20 +24,22 @@ export default function CreateActivity({ onCreateActivity }) {
         <Input type="text" name="name" required autoComplete="Off" />
       </Label>
 
-      <Label>
-        Upload Route
-        <Input type="url" name="route" placeholder="  url of your map-image" />
-      </Label>
+      <Container>
+        <Label>
+          Date
+          <Input type="date" name="date" required />
+        </Label>
+        <Label>
+          Start-Time
+          <Input type="time" name="time" required />
+        </Label>
+      </Container>
 
       <Label>
-        Date
-        <Input type="date" name="date" required />
+        Upload Map
+        <Input type="url" name="route" placeholder="  url of your map" />
       </Label>
 
-      <Label>
-        Start-Time
-        <Input type="time" name="time" required />
-      </Label>
       <Container>
         <Label>
           Distance
@@ -62,6 +64,7 @@ export default function CreateActivity({ onCreateActivity }) {
           />
         </Label>
       </Container>
+
       <Label>
         Start-Point
         <Input
@@ -72,6 +75,7 @@ export default function CreateActivity({ onCreateActivity }) {
           autoComplete="Off"
         />
       </Label>
+
       <Container>
         <Label>
           Postal Code
@@ -137,11 +141,11 @@ export default function CreateActivity({ onCreateActivity }) {
 const Form = styled.form`
   padding: 15px;
   padding: 1.3rem;
-  border-radius: 13px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   overflow-y: auto;
+  background: whitesmoke;
 `;
 
 const Input = styled.input`
@@ -179,7 +183,7 @@ const Label = styled.label`
 `;
 
 const Button = styled.button`
-  background-color: #bde3f2;
+  background-color: #9dadbc;
   border: none;
   padding: 10px 60px;
   text-align: center;

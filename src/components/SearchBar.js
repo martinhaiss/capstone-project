@@ -16,7 +16,8 @@ function SearchBar({ searchTerm, onChange }) {
         <Input
           type="text"
           name="input"
-          placeholder="Suche nach PLZ oder Stadt"
+          placeholder=" Suche nach PLZ oder Stadt"
+          autoComplete="off"
           value={searchTerm}
           onChange={onChange}
         />

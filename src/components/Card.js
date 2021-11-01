@@ -21,69 +21,68 @@ function ActivityCard({
   joined,
 }) {
   const [showDetails, setshowDetails] = useState(false);
-  const handleDetailsButtonClick = () => {
+  const handleDetailsClick = () => {
     setshowDetails(!showDetails);
   };
   return (
     <Wrapper>
-      <Header>
-        <Icon
-          src={
-            discipline === "cycling"
-              ? "./img/directions_bike.svg"
-              : "./img/directions_run.svg"
-          }
-          alt="kind of sport"
-        />
-        <Name>{name}</Name>
-        <DeleteButton
-          onClick={() => {
-            onDeleteButtonClick(id);
-          }}
-        >
-          <DeleteIcon
-            style={{ width: "20", height: "20" }}
-            aria-label="delete activity"
+      <Clickarena onClick={handleDetailsClick}>
+        <Header>
+          <Icon
+            src={
+              discipline === "cycling"
+                ? "./img/directions_bike.svg"
+                : "./img/directions_run.svg"
+            }
+            alt="kind of sport"
           />
-        </DeleteButton>
-      </Header>
-      <MapImg
-        src={route === "" ? "./img/placeholder.jpg" : route}
-        alt="map with route"
-      />
-      <DateTime>
-        <p>Date: {date}</p>
-        <p>Start: {time}</p>
-      </DateTime>
-      <HorizontalLine />
-      <DistanceDuration>
-        <p>Distance: {distance} km</p>
-        <p>Duration: {duration} h</p>
-      </DistanceDuration>
-      <HorizontalLine />
+          <Name>{name}</Name>
+          <DeleteButton
+            onClick={() => {
+              onDeleteButtonClick(id);
+            }}
+          >
+            <DeleteIcon
+              style={{ width: "20", height: "20" }}
+              aria-label="delete activity"
+            />
+          </DeleteButton>
+        </Header>
+        <MapImg
+          src={route === "" ? "./img/maps/placeholder.jpg" : route}
+          alt="map with route"
+        />
+        <DateTime>
+          <p>Date: {date}</p>
+          <p>Start: {time}</p>
+        </DateTime>
+        <DistanceDuration>
+          <p>Distance: {distance} km</p>
+          <p>Duration: {duration} h</p>
+        </DistanceDuration>
+      </Clickarena>
 
       {showDetails ? (
         <div>
+          <HorizontalLine />
           <Details>
-            <Meet>Meeting Point</Meet>
-            <Address>
-              <span style={{ display: "block" }}>{street}</span>
-              {postalcode} {city}
-            </Address>
+            <Clickarena onClick={handleDetailsClick}>
+              <Meet>Meeting Point</Meet>
+              <Address>
+                <span style={{ display: "block" }}>{street}</span>
+                {postalcode} {city}
+              </Address>
+              <Meet>Info</Meet>
+              <Info>{info}</Info>
+            </Clickarena>
             <JoinButton
               id={id}
               toggleJoin={onJoinButtonClick}
               isJoined={joined}
             />
-            <Info>{info}</Info>
           </Details>
         </div>
       ) : null}
-      <ShowMore>
-        <MoreButton onClick={handleDetailsButtonClick}>
-          {showDetails ? "LESS" : "MORE"}
-        </MoreButton>
-      </ShowMore>
     </Wrapper>
   );
 }
@@ -93,7 +92,7 @@ export default ActivityCard;
 const Wrapper = styled.div`
   background: whitesmoke;
   border: 0px solid #aaa;
-  margin: 15px;
+  margin: 10px;
   padding: 15px;
   border-radius: 13px;
   box-shadow: 0px 0px 20px #dedede;
@@ -106,6 +105,8 @@ const Wrapper = styled.div`
     text-align: center;
   }
 `;
+
+const Clickarena = styled.div``;
 
 const Header = styled.header`
   display: grid;
@@ -158,8 +159,8 @@ const Details = styled.div`
     "headline"
     "street"
     "city"
-    "button"
-    "info";
+    "info"
+    "button";
 `;
 
 const Meet = styled.h3`
@@ -181,21 +182,4 @@ const Info = styled.p`
 
 const HorizontalLine = styled.hr`
   width: 95%;
-`;
-
-const ShowMore = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const MoreButton = styled.button`
-  background-color: #bde3f2;
-  border: none;
-  padding: 10px 60px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin-top: 10px;
-  border-radius: 10px;
 `;

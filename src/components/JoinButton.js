@@ -18,7 +18,8 @@ const StyledJoinButton = styled.button`
   font-size: 12px;
   margin-top: 15px;
   margin-bottom: 15px;
-  border-radius: 10px 10px 10px 10px;
-  background-color: ${({ isJoined }) => (isJoined ? "#F2A488" : "#C3F2C2")};
+  border-radius: 10px;
+  color: ${({ isJoined }) => (isJoined ? "#FF7869" : "#3EC08D")};
+  background-color: #575859;
 `;
 export default JoinButton;
