@@ -1,10 +1,10 @@
 import ActivityCard from "./Card";
 import styled from "styled-components/macro";
-import Error from "./Error";
+import NoActivitiesMessage from "./NoActivitiesMessage";
 
 function CardList({ activities, onJoin, onDeleteButtonClick }) {
   if (!activities.length) {
-    return <Error />;
+    return <NoActivitiesMessage />;
   }
   return (
     <Content>
