@@ -26,7 +26,7 @@ function ActivityCard({
   };
   return (
     <Wrapper>
-      <Clickarena onClick={handleDetailsClick}>
+      <ClickArena onClick={handleDetailsClick}>
         <Header>
           <Icon
             src={
@@ -60,13 +60,13 @@ function ActivityCard({
           <p>Distance: {distance} km</p>
           <p>Duration: {duration} h</p>
         </DistanceDuration>
-      </Clickarena>
+      </ClickArena>
 
       {showDetails ? (
         <div>
           <HorizontalLine />
           <Details>
-            <Clickarena onClick={handleDetailsClick}>
+            <ClickArena onClick={handleDetailsClick}>
               <h3>Meeting Point</h3>
               <Address>
                 <span style={{ display: "block" }}>{street}</span>
@@ -74,7 +74,7 @@ function ActivityCard({
               </Address>
               <h3>Info</h3>
               <Info>{info}</Info>
-            </Clickarena>
+            </ClickArena>
             <JoinButton
               id={id}
               toggleJoin={onJoinButtonClick}
@@ -112,7 +112,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Clickarena = styled.div``;
+const ClickArena = styled.div``;
 
 const Header = styled.header`
   display: grid;
@@ -168,13 +168,6 @@ const Details = styled.div`
     "info"
     "button";
 `;
-
-// const MoreInfo = styled.h3`
-//   grid-area: headline;
-//   font-size: medium;
-//   margin: 10px;
-//   padding: 10px;
-// `;
 
 const Address = styled.p`
   grid-area: street;
