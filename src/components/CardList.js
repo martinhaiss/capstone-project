@@ -1,7 +1,11 @@
 import ActivityCard from "./Card";
 import styled from "styled-components/macro";
+import NoActivitiesMessage from "./NoActivitiesMessage";
 
 function CardList({ activities, onJoin, onDeleteButtonClick }) {
+  if (!activities.length) {
+    return <NoActivitiesMessage />;
+  }
   return (
     <Content>
       {activities.map((activity) => (
