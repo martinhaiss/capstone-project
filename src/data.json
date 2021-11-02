@@ -18,6 +18,22 @@
   {
     "id": "2",
     "discipline": "running",
+    "name": "Lauf gegen Rechts",
+    "route": "./img/maps/hamburg-alster_run.jpg",
+    "date": "2021-11-05",
+    "time": "13:00 Uhr",
+    "distance": "10",
+    "duration": "1",
+    "postalcode": "20536",
+    "city": "Hamburg",
+    "street": "Carl-Petersen-Straße 10",
+    "info": "Linksrum um die Alster, um ein Zeichen gegen Rechts zu setzen. Wer macht mit?",
+    "joined": false
+  },
+
+  {
+    "id": "3",
+    "discipline": "running",
     "name": "Vom Jensichpark zur Elbe",
     "route": "./img/maps/hamburg-jenischpark_run.jpg",
     "date": "2021-11-05",
@@ -32,7 +48,7 @@
   },
 
   {
-    "id": "3",
+    "id": "4",
     "discipline": "cycling",
     "name": "Auf zum Elbecamp",
     "route": "./img/maps/hamburg-elbe_bike.jpg",
@@ -44,22 +60,6 @@
     "city": "Hamburg",
     "street": "Holländische Reihe 50",
     "info": "Wir sind bisher zu zweit und freuen uns über weitere Mitfahrende. Treffpunkt ist neben der Bushaltestelle.",
-    "joined": false
-  },
-
-  {
-    "id": "4",
-    "discipline": "running",
-    "name": "Lauf gegen Rechts",
-    "route": "./img/maps/hamburg-alster_run.jpg",
-    "date": "2021-11-05",
-    "time": "13:00 Uhr",
-    "distance": "10",
-    "duration": "1",
-    "postalcode": "20536",
-    "city": "Hamburg",
-    "street": "Carl-Petersen-Straße 10",
-    "info": "Linksrum um die Alster, um ein Zeichen gegen Rechts zu setzen. Wer macht mit?",
     "joined": false
   },
 

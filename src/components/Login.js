@@ -13,7 +13,7 @@ function Login({ onHandleSetUsername }) {
 
   return (
     <Wrapper>
-      <img src={collabLogo} alt="" />
+      <img src={collabLogo} alt="welcome to collab" />
       <Form
         onSubmit={(event) => {
           handleSubmit(event);

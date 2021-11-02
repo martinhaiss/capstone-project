@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import Footer from "./Footer";
 
 describe("Footer", () => {
-  it("renders 4 links", () => {
+  it("renders 5 links", () => {
     render(
       <Router>
         <Footer />
@@ -12,7 +12,7 @@ describe("Footer", () => {
     );
 
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(4);
+    expect(links).toHaveLength(5);
   });
 
   it("changes to active when icon is clicked", () => {
@@ -28,7 +28,7 @@ describe("Footer", () => {
     expect(linkHome).toHaveClass("is-active");
   });
 
-  it(`doesn't change the "joined", "cycling" and "running" links to active when "home" link is clicked`, () => {
+  it(`doesn't change the "joined", "cycling", "running" and "create" links to active when "home" link is clicked`, () => {
     render(
       <Router>
         <Footer />
@@ -40,10 +40,12 @@ describe("Footer", () => {
     const linkJoined = links[1];
     const linkCycling = links[2];
     const linkRunning = links[3];
+    const linkCreate = links[4];
     userEvent.click(linkHome);
     expect(linkJoined).not.toHaveClass("is-active");
     expect(linkCycling).not.toHaveClass("is-active");
     expect(linkRunning).not.toHaveClass("is-active");
+    expect(linkCreate).not.toHaveClass("is-active");
   });
 
   it('changes to active when "join" link is clicked', () => {

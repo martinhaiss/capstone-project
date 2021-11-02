@@ -23,5 +23,5 @@ it("renders two button", () => {
   render(<Card />);
 
   const Button = screen.getAllByRole("button");
-  expect(Button).toHaveLength(2);
+  expect(Button).toHaveLength(1);
 });
