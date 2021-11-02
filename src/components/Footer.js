@@ -67,8 +67,8 @@ const Navigation = styled.nav`
 `;
 
 const NavigationLink = styled(NavLink)`
-  color: white;
+  color: whitesmoke;
   &.${(props) => props.activeClassName} {
-    color: #f27649;
+    color: #e79c25;
   }
 `;

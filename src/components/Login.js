@@ -14,7 +14,6 @@ function Login({ onHandleSetUsername }) {
   return (
     <Wrapper>
       <img src={collabLogo} alt="" />
-      <h1>Welcome to Collab</h1>
       <Form
         onSubmit={(event) => {
           handleSubmit(event);
@@ -50,15 +49,12 @@ const Wrapper = styled.div`
   align-items: center;
   margin: 30% auto 0 auto;
   max-width: 500px;
-  h1 {
-    font-size: 40px;
-    text-align: center;
+  gap: 10px;
   }
   img {
-    width: 90%;
-    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 0 auto;
     border-radius: 7px;
-    box-shadow: 0px 0px 20px #dedede;
   }
 `;
 
@@ -67,6 +63,7 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   gap: 5px;
+  margin-top: 15px;
 `;
 
 const Input = styled.input`
@@ -77,7 +74,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  background-color: #bde3f2;
+  background-color: #9dadbc;
   border: none;
   padding: 10px;
   width: 60%;

@@ -7,7 +7,7 @@ function Header({ searchTerm, onChange }) {
 
   return (
     <Wrapper>
-      <p>Hello, {user}!</p>
+      <p>Hi, {user}</p>
       <SearchBar searchTerm={searchTerm} onChange={onChange} />
     </Wrapper>
   );

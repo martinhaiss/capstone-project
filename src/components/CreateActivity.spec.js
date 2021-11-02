@@ -17,7 +17,7 @@ describe("CreateActivity", () => {
     const inputName = screen.getByLabelText("Name Of Your Activity");
     expect(inputName).toBeRequired();
 
-    const inputUpload = screen.getByLabelText("Upload Route");
+    const inputUpload = screen.getByLabelText("Upload Map");
     expect(inputUpload);
 
     const inputDate = screen.getByLabelText("Date");
@@ -64,7 +64,7 @@ describe("CreateActivity", () => {
     const inputName = screen.getByLabelText("Name Of Your Activity");
     userEvent.type(inputName, "Test Activity");
 
-    const inputRoute = screen.getByLabelText("Upload Route");
+    const inputRoute = screen.getByLabelText("Upload Map");
     userEvent.type(inputRoute, "./img/map-placeholder-2.png");
 
     const inputDate = screen.getByLabelText("Date");
