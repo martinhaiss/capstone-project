@@ -1,7 +1,11 @@
 import ActivityCard from "./Card";
 import styled from "styled-components/macro";
+import Error from "./Error";
 
 function CardList({ activities, onJoin, onDeleteButtonClick }) {
+  if (!activities.length) {
+    return <Error />;
+  }
   return (
     <Content>
       {activities.map((activity) => (
