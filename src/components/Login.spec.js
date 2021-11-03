@@ -10,31 +10,31 @@ describe("Login", () => {
     expect(displayedImage).toBeInTheDocument();
   });
 
-  it("displays an image with an alt-text", () => {
+  it("displays an image", () => {
     render(<Login />);
 
-    const altText = screen.getByAltText("collab");
-    expect(altText).toBeInTheDocument();
-  });
-
-  it("has heading with the app's name ", () => {
-    render(<Login />);
-
-    const heading = screen.getByRole("heading", { level: 1 });
-    expect(heading).toHaveTextContent("Welcome to Collab");
+    const logoImage = screen.getByAltText("welcome to collab");
+    expect(logoImage).toBeInTheDocument();
   });
 
   it("has an input field for the user's name, which requires an input", () => {
     render(<Login />);
 
-    const inputEl = screen.getByPlaceholderText("Please enter your name");
+    const inputEl = screen.getByPlaceholderText("Username");
+    expect(inputEl).toBeRequired();
+  });
+
+  it("has an input field for the user's password, which requires an input", () => {
+    render(<Login />);
+
+    const inputEl = screen.getByPlaceholderText("Password");
     expect(inputEl).toBeRequired();
   });
 
   it('is possible for the user to type "Klammerfische" into the input field', () => {
     render(<Login />);
 
-    const inputEl = screen.getByPlaceholderText("Please enter your name");
+    const inputEl = screen.getByPlaceholderText("Username");
     userEvent.type(inputEl, "Klammerfische");
     expect(inputEl).toHaveValue("Klammerfische");
   });

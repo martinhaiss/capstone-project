@@ -1,51 +1,60 @@
 import { render, screen } from "@testing-library/react";
 import CardList from "./CardList";
 
-const mockData = [
-  {
-    sport: "https://i.imgur.com/5z0pzoH.png",
-    name: "Schnelle Abendrunde Richtung Jenischpark",
-    route: "https://i.imgur.com/2EQ7oCt.png",
-    date: "05.11.2021",
-    time: "18:15 Uhr ",
-    distance: "14 km",
-    duration: "1:00 h",
-  },
-  {
-    sport: "https://i.imgur.com/J2nnsMN.png",
-    name: "Deichrunde am Abend",
-    route: "https://i.imgur.com/gu3gwcr.png",
-    date: "06.11.2021",
-    time: "17:30 Uhr",
-    distance: "50 km",
-    duration: "2:00 h",
-  },
-
-  {
-    sport: "https://i.imgur.com/5z0pzoH.png",
-    name: "Schnelle Runde am Mittag",
-    route: "https://i.imgur.com/2EQ7oCt.png",
-    date: "08.11.2021",
-    time: "12:15 Uhr",
-    distance: "14 km",
-    duration: "1:00 h",
-  },
-  {
-    sport: "https://i.imgur.com/J2nnsMN.png",
-    name: "Zum Deich den Schafen gute Nacht sagen",
-    route: "https://i.imgur.com/gu3gwcr.png",
-    date: "09.11.2021",
-    time: "20:15 Uhr",
-    distance: "50 km",
-    duration: "2:00 h",
-  },
-];
-
 describe("CardList", () => {
-  it("renders CardList element", () => {
-    render(<CardList activityDatata={mockData} />);
+  const mockData = [
+    {
+      id: "1",
+      discipline: "cycling",
+      name: "Am Deich Schafen gute Nacht sagen",
+      route: "./img/maps/hamburg-wedeler-marsch_bike.jpg",
+      date: "2021-11-09",
+      time: "20:15 Uhr",
+      distance: "50",
+      duration: "2",
+      postalcode: "22765",
+      city: "Hamburg",
+      street: "Museumstraße 23",
+      info:
+        "Die Elbe entlang, vorbei an Schafen. Sehr vielen Schafen. Wer ist dabei?",
+      joined: false,
+    },
+    {
+      id: "2",
+      discipline: "cycling",
+      name: "Mittagsrunde",
+      route: "./img/maps/hamburg-wedeler-marsch_bike.jpg",
+      date: "2021-11-09",
+      time: "12:15 Uhr",
+      distance: "50",
+      duration: "2",
+      postalcode: "22765",
+      city: "Hamburg",
+      street: "Museumstraße 23",
+      info: "Die Elbe entlang, vorbei an Schafen. Wer ist dabei?",
+      joined: true,
+    },
+    {
+      id: "3",
+      discipline: "cycling",
+      name: "Abendrunde",
+      route: "./img/maps/hamburg-wedeler-marsch_bike.jpg",
+      date: "2021-11-09",
+      time: "20:15 Uhr",
+      distance: "50",
+      duration: "2",
+      postalcode: "22765",
+      city: "Hamburg",
+      street: "Museumstraße 23",
+      info: "Die Elbe entlang, Wer ist dabei?",
+      joined: false,
+    },
+  ];
 
-    const activities = screen.getByRole("main");
-    expect(activities).toBeInTheDocument();
+  it("renders 4 activities", () => {
+    render(<CardList activities={mockData} />);
+
+    const cardListActivities = screen.getAllByRole("article");
+    expect(cardListActivities).toHaveLength(3);
   });
 });

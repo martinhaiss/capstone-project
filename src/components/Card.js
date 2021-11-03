@@ -89,7 +89,7 @@ function ActivityCard({
 
 export default ActivityCard;
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   background: whitesmoke;
   border: 0px solid #aaa;
   margin: 10px;
