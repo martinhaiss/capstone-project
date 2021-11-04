@@ -1,8 +1,8 @@
 import { nanoid } from "nanoid";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 
-export default function CreateActivity({ onCreateActivity }) {
+function CreateActivity({ onCreateActivity }) {
   const history = useHistory();
   return (
     <Form onSubmit={handleSubmit}>
@@ -37,7 +37,7 @@ export default function CreateActivity({ onCreateActivity }) {
 
       <Label>
         Upload Map
-        <Input type="url" name="route" placeholder="  url of your map" />
+        <Input type="url" name="route" placeholder="url of your map" />
       </Label>
 
       <Container>
@@ -47,7 +47,7 @@ export default function CreateActivity({ onCreateActivity }) {
             type="number"
             name="distance"
             step="0.1"
-            placeholder="  (km)"
+            placeholder="(km)"
             required
             autoComplete="Off"
           />
@@ -58,7 +58,7 @@ export default function CreateActivity({ onCreateActivity }) {
             type="number"
             name="duration"
             step="0.1"
-            placeholder="  (hours)"
+            placeholder="(hours)"
             required
             autoComplete="Off"
           />
@@ -70,7 +70,7 @@ export default function CreateActivity({ onCreateActivity }) {
         <Input
           type="text"
           name="street"
-          placeholder="  street + housenumber or distinctive place"
+          placeholder="street + housenumber or distinctive place"
           required
           autoComplete="Off"
         />
@@ -91,7 +91,7 @@ export default function CreateActivity({ onCreateActivity }) {
         Info
         <Textarea
           name="info"
-          placeholder=" max 140 characters"
+          placeholder="max 140 characters"
           autoComplete="Off"
           rows="4"
           maxLength="140"
@@ -137,6 +137,8 @@ export default function CreateActivity({ onCreateActivity }) {
     history.push("/");
   }
 }
+
+export default CreateActivity;
 
 const Form = styled.form`
   padding: 15px;
