@@ -8,6 +8,8 @@ const JoinButton = ({ id, isJoined, toggleJoin }) => {
   );
 };
 
+export default JoinButton;
+
 const StyledJoinButton = styled.button`
   grid-area: button;
   border: none;
@@ -21,4 +23,3 @@ const StyledJoinButton = styled.button`
   color: ${({ isJoined }) => (isJoined ? "#FF7869" : "#3EC08D")};
   background-color: #575859;
 `;
-export default JoinButton;

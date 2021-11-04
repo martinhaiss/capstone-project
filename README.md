@@ -1,6 +1,6 @@
 # Capstone Project: Collab
 
-![Collab](/login-screenshot)
+![Collab](/public/img/collab-header.png)
 
 Collab helps connecting people to train together. You like to go on a run or ride your bike, but not alone? Collab helps you to find training partners in your neighboorhood. You can search for suitable activities and join them. Or you create your own activity. No matter how you choose, you no longer have to train alone if you don't want to. Have fun meeting people and enjoy training together!
 
@@ -10,7 +10,7 @@ You can find a hosted version on Vercel: [Demo Version of Capstone Project](http
 
 **Important:** The demo is optimized for mobile devices.
 
-![App screens](/screenshots-of-all-categories)
+![App screens](/public/img/collab-screens.png)
 
 ## Tech Stack
 

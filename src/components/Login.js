@@ -3,9 +3,9 @@ import styled from "styled-components/macro";
 import saveToLocal from "../lib/saveToLocal";
 
 function Login({ onHandleSetUsername }) {
-  function handleSubmit(loginEvent) {
-    loginEvent.preventDefault();
-    const form = loginEvent.target;
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
     const { username } = form.elements;
     saveToLocal("user", username.value);
     onHandleSetUsername(username.value);
@@ -19,6 +19,7 @@ function Login({ onHandleSetUsername }) {
           handleSubmit(event);
         }}
       >
+        <Label>username </Label>
         <Input
           type="text"
           name="username"
@@ -27,6 +28,8 @@ function Login({ onHandleSetUsername }) {
           placeholder="Username"
           required
         />
+
+        <Label>password </Label>
         <Input
           type="password"
           name="password"
@@ -35,6 +38,7 @@ function Login({ onHandleSetUsername }) {
           placeholder="Password"
           required
         />
+
         <Button>Login</Button>
       </Form>
     </Wrapper>
@@ -64,6 +68,14 @@ const Form = styled.form`
   justify-content: center;
   gap: 5px;
   margin-top: 15px;
+`;
+
+const Label = styled.label`
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
 `;
 
 const Input = styled.input`
